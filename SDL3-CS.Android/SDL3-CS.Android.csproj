@@ -20,13 +20,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedJar Include="Jars\SDL3AndroidBridge.jar" />
+    <AndroidLibrary Include="Jars\SDL3AndroidBridge.jar" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedNativeLibrary Include="..\native\android\armeabi-v7a\libSDL3.so" />
-    <EmbeddedNativeLibrary Include="..\native\android\arm64-v8a\libSDL3.so" />
-    <EmbeddedNativeLibrary Include="..\native\android\x86\libSDL3.so" />
-    <EmbeddedNativeLibrary Include="..\native\android\x86_64\libSDL3.so" />
+    <AndroidNativeLibrary Include="..\native\android\armeabi-v7a\libSDL3.so" />
+    <AndroidNativeLibrary Include="..\native\android\arm64-v8a\libSDL3.so" />
+    <AndroidNativeLibrary Include="..\native\android\x86\libSDL3.so" />
+    <AndroidNativeLibrary Include="..\native\android\x86_64\libSDL3.so" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="_._">
+      <!-- Means this package doesn't provide any reference assembly to the target framework.
+           nupkg is a zip file and doesn't has concept for folders,
+           so there must be something under the path, otherwise client will consider this package broken.
+           See https://docs.microsoft.com/en-us/nuget/reference/errors-and-warnings/nu5128#scenario-2 . -->
+      <Pack>true</Pack>
+      <PackagePath>lib\$(TargetFramework)</PackagePath>
+    </None>
   </ItemGroup>
 </Project>
