@@ -55,6 +55,15 @@ jobs:
             cd /workspace
             ./SDL3-CS/build.sh
 
+      - name: Get Actions user id
+        id: get_uid
+        run: echo "uid=$(id -u $USER)" >> $GITHUB_OUTPUT
+
+      - name: Correct Ownership in GITHUB_WORKSPACE directory
+        uses: peter-murray/reset-workspace-ownership-action@v1
+        with:
+          user_id: ${{ steps.get_uid.outputs.uid }}
+
       - name: Build
         if: ${{ !contains(matrix.platform.container, 'arm') }}
         shell: bash
