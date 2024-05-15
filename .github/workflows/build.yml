@@ -51,6 +51,7 @@ jobs:
             -e RUNNER_OS=${{ runner.os }}
             -e FLAGS=${{ matrix.platform.flags }}
             -e BUILD_TYPE=${{ env.BUILD_TYPE }}
+            -u 1000
           run: |
             cd /workspace
             ./SDL3-CS/build.sh
