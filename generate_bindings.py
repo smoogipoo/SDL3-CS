@@ -6,8 +6,6 @@ Generates C# bindings for SDL3 using ClangSharp.
 
 Prerequisites:
 - run `dotnet tool restore` (to install ClangSharpPInvokeGenerator)
-- https://github.com/libsdl-org/SDL checked out alongside this repository
-- git apply --3way `SDL-use-proper-types.patch` to SDL repo
 
 This script should be run manually.
 """
@@ -21,11 +19,12 @@ import sys
 # Needs to match SDL3.SourceGeneration.Helper.UnsafePrefix
 unsafe_prefix = "Unsafe_"
 
-SDL_root = pathlib.Path("../../SDL")
+SDL_root = pathlib.Path("SDL").resolve()
 SDL_include_root = SDL_root / "include"
 SDL3_header_base = "SDL3"  # base folder of header files
 
-csproj_root = pathlib.Path(".")
+repository_root = pathlib.Path("./").resolve()
+csproj_root = pathlib.Path("./SDL3-CS").resolve()
 
 
 class Header:
@@ -131,6 +130,13 @@ headers = [
     add("SDL3/SDL_vulkan.h"),
 ]
 
+def patch_sdl_types():
+    subprocess.run([
+        "git",
+        "apply",
+        "--3way",
+        repository_root / "SDL-use-proper-types.patch"
+    ], cwd = SDL_root)
 
 def get_sdl_api_dump():
     subprocess.run([
@@ -292,6 +298,8 @@ def get_string_returning_functions(sdl_api):
 
 
 def main():
+    patch_sdl_types()
+
     sdl_api = get_sdl_api_dump()
 
     # typedefs are added globally as their types appear outside of the defining header
