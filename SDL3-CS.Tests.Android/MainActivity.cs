@@ -1,6 +1,4 @@
-﻿using Org.Libsdl.App;
-
-namespace SDL.Tests.Android
+﻿namespace SDL.Tests.Android
 {
     [Activity(Label = "SDL3-CS Android Tests", MainLauncher = true)]
     public class MainActivity : SDLActivity
