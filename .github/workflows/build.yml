@@ -2,6 +2,8 @@ name: Build Native
 on: [ push, pull_request ]
 env:
   BUILD_TYPE: Release
+  NDK_VER: 23.1.7779620
+  PLATFORM_VER: android-34
 
 jobs:
   build-desktop:
@@ -125,9 +127,6 @@ jobs:
   build-android:
     name: android
     runs-on: ubuntu-20.04
-    env:
-      NDK_VER: 23.1.7779620
-      PLATFORM_VER: android-34
     steps:
       - uses: actions/checkout@v4
         with:
@@ -197,6 +196,27 @@ jobs:
         with:
           dotnet-version: 8.0.x
 
+      - name: Install Android workload
+        run: dotnet workload install android
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: microsoft
+          java-version: |
+            11
+            17
+
+      - name: Install Android SDK Manager
+        uses: android-actions/setup-android@v3
+        with:
+          packages: ''
+
+      - name: Install Android SDK
+        run: |
+          sdkmanager --install "platform-tools" "platforms;$PLATFORM_VER"
+          sdkmanager --install "ndk;$NDK_VER" --channel=3
+
       - name: Download native artifacts
         uses: actions/download-artifact@v4
         with:
@@ -237,7 +257,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: package-SDL3-CS.Android
-          path: SDL3-CS.Android\bin\Release\ppy.*.nupkg
+          path: SDL3-CS.Android/bin/Release/ppy.*.nupkg
 
   publish:
     runs-on: ubuntu-latest
