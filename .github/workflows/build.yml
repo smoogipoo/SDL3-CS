@@ -43,6 +43,7 @@ jobs:
         with:
           name: native-${{ matrix.platform.name }}
           path: native-${{ matrix.platform.name }}.tar
+          if-no-files-found: error
 
   build-linux-arm:
     name: ${{ matrix.platform.name }}
@@ -93,6 +94,7 @@ jobs:
         with:
           name: native-${{ matrix.platform.name }}
           path: native-${{ matrix.platform.name }}.tar
+          if-no-files-found: error
 
   build-ios:
     name: ios
@@ -123,6 +125,7 @@ jobs:
         with:
           name: native-ios
           path: native-ios.tar
+          if-no-files-found: error
 
   build-android:
     name: android
@@ -178,12 +181,14 @@ jobs:
         with:
           name: native-android
           path: native-android.tar
+          if-no-files-found: error
 
       - name: Upload JAR artifact
         uses: actions/upload-artifact@v4
         with:
           name: android-jar
           path: SDL3-CS.Android/Jars/SDL3AndroidBridge.jar
+          if-no-files-found: error
 
   pack:
     runs-on: ubuntu-latest
@@ -252,12 +257,14 @@ jobs:
         with:
           name: package-SDL3-CS
           path: SDL3-CS/bin/Release/ppy.*.nupkg
+          if-no-files-found: error
 
       - name: Upload android artifact
         uses: actions/upload-artifact@v4
         with:
           name: package-SDL3-CS.Android
           path: SDL3-CS.Android/bin/Release/ppy.*.nupkg
+          if-no-files-found: error
 
   publish:
     runs-on: ubuntu-latest
