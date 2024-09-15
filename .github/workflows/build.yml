@@ -34,13 +34,13 @@ jobs:
         run: ./build.sh
 
       - name: Compress native directory
-        run: tar -czf native-${{ matrix.platform.name }}.tar.gz native
+        run: tar -cf native-${{ matrix.platform.name }}.tar native
 
       - name: Upload native artifact
         uses: actions/upload-artifact@v4
         with:
           name: native-${{ matrix.platform.name }}
-          path: native-${{ matrix.platform.name }}.tar.gz
+          path: native-${{ matrix.platform.name }}.tar
 
   build-linux-arm:
     name: ${{ matrix.platform.name }}
@@ -84,13 +84,13 @@ jobs:
           user_id: ${{ steps.get_uid.outputs.uid }}
 
       - name: Compress native directory
-        run: tar -czf native-${{ matrix.platform.name }}.tar.gz native
+        run: tar -cf native-${{ matrix.platform.name }}.tar native
 
       - name: Upload native artifact
         uses: actions/upload-artifact@v4
         with:
           name: native-${{ matrix.platform.name }}
-          path: native-${{ matrix.platform.name }}.tar.gz
+          path: native-${{ matrix.platform.name }}.tar
 
   build-ios:
     name: ios
@@ -114,13 +114,13 @@ jobs:
           cp SDL/Xcode/SDL/build/SDL3.xcframework/ios-arm64_x86_64-simulator/SDL3.framework/Info.plist native/ios/SDL3.xcframework/ios-arm64_x86_64-simulator/SDL3.framework/Info.plist;
 
       - name: Compress native directory
-        run: tar -czf native-ios.tar.gz native
+        run: tar -cf native-ios.tar native
 
       - name: Upload native artifact
         uses: actions/upload-artifact@v4
         with:
           name: native-ios
-          path: native-ios.tar.gz
+          path: native-ios.tar
 
   build-android:
     name: android
@@ -172,13 +172,13 @@ jobs:
           jar cvf $OUTPUT/SDL3AndroidBridge.jar org/libsdl/app/*.class
 
       - name: Compress native directory
-        run: tar -czf native-android.tar.gz native
+        run: tar -cf native-android.tar native
 
       - name: Upload native artifact
         uses: actions/upload-artifact@v4
         with:
           name: native-android
-          path: native-android.tar.gz
+          path: native-android.tar
 
       - name: Upload JAR artifact
         uses: actions/upload-artifact@v4
@@ -204,7 +204,11 @@ jobs:
           merge-multiple: true
 
       - name: Decompress native artifacts
-        run: tar -xzf native-*.tar.gz
+        run: |
+          for file in native-*.tar
+          do
+            tar -xf "$file"
+          done
 
       - name: Download JAR artifact
         uses: actions/download-artifact@v4
