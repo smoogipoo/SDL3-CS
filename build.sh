@@ -83,24 +83,21 @@ if [[ $RUNNER_OS == 'Linux' ]]; then
     fi
 fi
 
+pushd SDL >/dev/null
 
 cmake -B build $FLAGS -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DSDL_SHARED_ENABLED_BY_DEFAULT=ON -DSDL_STATIC_ENABLED_BY_DEFAULT=ON
-
-# Build
 cmake --build build/ --config Release
-
-# Install
 $SUDO cmake --install build/ --prefix install_output --config Release
 
-mkdir -p SDL3-CS/native/$NAME
+popd >/dev/null
 
 if [[ $RUNNER_OS == 'Windows' ]]; then
     # Prepare release (Windows)
-    cp install_output/bin/SDL3.dll SDL3-CS/native/$NAME/SDL3.dll
+    cp SDL/install_output/bin/SDL3.dll native/$NAME/SDL3.dll
 elif [[ $RUNNER_OS == 'Linux' ]]; then
     # Prepare release (Linux)
-    cp install_output/lib/libSDL3.so SDL3-CS/native/$NAME/libSDL3.so
+    cp SDL/install_output/lib/libSDL3.so native/$NAME/libSDL3.so
 elif [[ $RUNNER_OS == 'macOS' ]]; then
     # Prepare release (macOS)
-    cp install_output/lib/libSDL3.dylib SDL3-CS/native/$NAME/libSDL3.dylib
+    cp SDL/install_output/lib/libSDL3.dylib native/$NAME/libSDL3.dylib
 fi
