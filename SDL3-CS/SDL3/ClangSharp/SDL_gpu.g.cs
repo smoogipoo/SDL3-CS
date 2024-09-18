@@ -80,7 +80,8 @@ namespace SDL
     {
     }
 
-    public enum SDL_GPUPrimitiveType
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUPrimitiveType : uint
     {
         SDL_GPU_PRIMITIVETYPE_TRIANGLELIST,
         SDL_GPU_PRIMITIVETYPE_TRIANGLESTRIP,
@@ -89,26 +90,30 @@ namespace SDL
         SDL_GPU_PRIMITIVETYPE_POINTLIST,
     }
 
-    public enum SDL_GPULoadOp
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPULoadOp : uint
     {
         SDL_GPU_LOADOP_LOAD,
         SDL_GPU_LOADOP_CLEAR,
         SDL_GPU_LOADOP_DONT_CARE,
     }
 
-    public enum SDL_GPUStoreOp
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUStoreOp : uint
     {
         SDL_GPU_STOREOP_STORE,
         SDL_GPU_STOREOP_DONT_CARE,
     }
 
-    public enum SDL_GPUIndexElementSize
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUIndexElementSize : uint
     {
         SDL_GPU_INDEXELEMENTSIZE_16BIT,
         SDL_GPU_INDEXELEMENTSIZE_32BIT,
     }
 
-    public enum SDL_GPUTextureFormat
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUTextureFormat : uint
     {
         SDL_GPU_TEXTUREFORMAT_INVALID,
         SDL_GPU_TEXTUREFORMAT_A8_UNORM,
@@ -169,7 +174,8 @@ namespace SDL
         SDL_GPU_TEXTUREFORMAT_D32_FLOAT_S8_UINT,
     }
 
-    public enum SDL_GPUTextureType
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUTextureType : uint
     {
         SDL_GPU_TEXTURETYPE_2D,
         SDL_GPU_TEXTURETYPE_2D_ARRAY,
@@ -178,7 +184,8 @@ namespace SDL
         SDL_GPU_TEXTURETYPE_CUBE_ARRAY,
     }
 
-    public enum SDL_GPUSampleCount
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUSampleCount : uint
     {
         SDL_GPU_SAMPLECOUNT_1,
         SDL_GPU_SAMPLECOUNT_2,
@@ -186,7 +193,8 @@ namespace SDL
         SDL_GPU_SAMPLECOUNT_8,
     }
 
-    public enum SDL_GPUCubeMapFace
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUCubeMapFace : uint
     {
         SDL_GPU_CUBEMAPFACE_POSITIVEX,
         SDL_GPU_CUBEMAPFACE_NEGATIVEX,
@@ -196,19 +204,22 @@ namespace SDL
         SDL_GPU_CUBEMAPFACE_NEGATIVEZ,
     }
 
-    public enum SDL_GPUTransferBufferUsage
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUTransferBufferUsage : uint
     {
         SDL_GPU_TRANSFERBUFFERUSAGE_UPLOAD,
         SDL_GPU_TRANSFERBUFFERUSAGE_DOWNLOAD,
     }
 
-    public enum SDL_GPUShaderStage
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUShaderStage : uint
     {
         SDL_GPU_SHADERSTAGE_VERTEX,
         SDL_GPU_SHADERSTAGE_FRAGMENT,
     }
 
-    public enum SDL_GPUVertexElementFormat
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUVertexElementFormat : uint
     {
         SDL_GPU_VERTEXELEMENTFORMAT_INVALID,
         SDL_GPU_VERTEXELEMENTFORMAT_INT,
@@ -243,32 +254,37 @@ namespace SDL
         SDL_GPU_VERTEXELEMENTFORMAT_HALF4,
     }
 
-    public enum SDL_GPUVertexInputRate
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUVertexInputRate : uint
     {
         SDL_GPU_VERTEXINPUTRATE_VERTEX,
         SDL_GPU_VERTEXINPUTRATE_INSTANCE,
     }
 
-    public enum SDL_GPUFillMode
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUFillMode : uint
     {
         SDL_GPU_FILLMODE_FILL,
         SDL_GPU_FILLMODE_LINE,
     }
 
-    public enum SDL_GPUCullMode
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUCullMode : uint
     {
         SDL_GPU_CULLMODE_NONE,
         SDL_GPU_CULLMODE_FRONT,
         SDL_GPU_CULLMODE_BACK,
     }
 
-    public enum SDL_GPUFrontFace
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUFrontFace : uint
     {
         SDL_GPU_FRONTFACE_COUNTER_CLOCKWISE,
         SDL_GPU_FRONTFACE_CLOCKWISE,
     }
 
-    public enum SDL_GPUCompareOp
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUCompareOp : uint
     {
         SDL_GPU_COMPAREOP_INVALID,
         SDL_GPU_COMPAREOP_NEVER,
@@ -281,7 +297,8 @@ namespace SDL
         SDL_GPU_COMPAREOP_ALWAYS,
     }
 
-    public enum SDL_GPUStencilOp
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUStencilOp : uint
     {
         SDL_GPU_STENCILOP_INVALID,
         SDL_GPU_STENCILOP_KEEP,
@@ -294,7 +311,8 @@ namespace SDL
         SDL_GPU_STENCILOP_DECREMENT_AND_WRAP,
     }
 
-    public enum SDL_GPUBlendOp
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUBlendOp : uint
     {
         SDL_GPU_BLENDOP_INVALID,
         SDL_GPU_BLENDOP_ADD,
@@ -304,7 +322,8 @@ namespace SDL
         SDL_GPU_BLENDOP_MAX,
     }
 
-    public enum SDL_GPUBlendFactor
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUBlendFactor : uint
     {
         SDL_GPU_BLENDFACTOR_INVALID,
         SDL_GPU_BLENDFACTOR_ZERO,
@@ -322,33 +341,38 @@ namespace SDL
         SDL_GPU_BLENDFACTOR_SRC_ALPHA_SATURATE,
     }
 
-    public enum SDL_GPUFilter
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUFilter : uint
     {
         SDL_GPU_FILTER_NEAREST,
         SDL_GPU_FILTER_LINEAR,
     }
 
-    public enum SDL_GPUSamplerMipmapMode
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUSamplerMipmapMode : uint
     {
         SDL_GPU_SAMPLERMIPMAPMODE_NEAREST,
         SDL_GPU_SAMPLERMIPMAPMODE_LINEAR,
     }
 
-    public enum SDL_GPUSamplerAddressMode
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUSamplerAddressMode : uint
     {
         SDL_GPU_SAMPLERADDRESSMODE_REPEAT,
         SDL_GPU_SAMPLERADDRESSMODE_MIRRORED_REPEAT,
         SDL_GPU_SAMPLERADDRESSMODE_CLAMP_TO_EDGE,
     }
 
-    public enum SDL_GPUPresentMode
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUPresentMode : uint
     {
         SDL_GPU_PRESENTMODE_VSYNC,
         SDL_GPU_PRESENTMODE_IMMEDIATE,
         SDL_GPU_PRESENTMODE_MAILBOX,
     }
 
-    public enum SDL_GPUSwapchainComposition
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GPUSwapchainComposition : uint
     {
         SDL_GPU_SWAPCHAINCOMPOSITION_SDR,
         SDL_GPU_SWAPCHAINCOMPOSITION_SDR_LINEAR,

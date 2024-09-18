@@ -27,7 +27,8 @@ using System.Runtime.InteropServices;
 
 namespace SDL
 {
-    public enum SDL_BlendOperation
+    [NativeTypeName("unsigned int")]
+    public enum SDL_BlendOperation : uint
     {
         SDL_BLENDOPERATION_ADD = 0x1,
         SDL_BLENDOPERATION_SUBTRACT = 0x2,
@@ -36,7 +37,8 @@ namespace SDL
         SDL_BLENDOPERATION_MAXIMUM = 0x5,
     }
 
-    public enum SDL_BlendFactor
+    [NativeTypeName("unsigned int")]
+    public enum SDL_BlendFactor : uint
     {
         SDL_BLENDFACTOR_ZERO = 0x1,
         SDL_BLENDFACTOR_ONE = 0x2,

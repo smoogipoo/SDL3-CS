@@ -28,7 +28,8 @@ using System.Runtime.InteropServices;
 
 namespace SDL
 {
-    public enum SDL_AppResult
+    [NativeTypeName("unsigned int")]
+    public enum SDL_AppResult : uint
     {
         SDL_APP_CONTINUE,
         SDL_APP_SUCCESS,

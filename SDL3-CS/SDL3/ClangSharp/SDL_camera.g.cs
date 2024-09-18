@@ -46,7 +46,8 @@ namespace SDL
         public int framerate_denominator;
     }
 
-    public enum SDL_CameraPosition
+    [NativeTypeName("unsigned int")]
+    public enum SDL_CameraPosition : uint
     {
         SDL_CAMERA_POSITION_UNKNOWN,
         SDL_CAMERA_POSITION_FRONT_FACING,

@@ -28,7 +28,8 @@ using System.Runtime.InteropServices;
 
 namespace SDL
 {
-    public enum SDL_TextInputType
+    [NativeTypeName("unsigned int")]
+    public enum SDL_TextInputType : uint
     {
         SDL_TEXTINPUT_TYPE_TEXT,
         SDL_TEXTINPUT_TYPE_TEXT_NAME,
@@ -41,7 +42,8 @@ namespace SDL
         SDL_TEXTINPUT_TYPE_NUMBER_PASSWORD_VISIBLE,
     }
 
-    public enum SDL_Capitalization
+    [NativeTypeName("unsigned int")]
+    public enum SDL_Capitalization : uint
     {
         SDL_CAPITALIZE_NONE,
         SDL_CAPITALIZE_SENTENCES,

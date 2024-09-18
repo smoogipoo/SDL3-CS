@@ -25,7 +25,8 @@
 
 namespace SDL
 {
-    public enum SDL_PenAxis
+    [NativeTypeName("unsigned int")]
+    public enum SDL_PenAxis : uint
     {
         SDL_PEN_AXIS_PRESSURE,
         SDL_PEN_AXIS_XTILT,

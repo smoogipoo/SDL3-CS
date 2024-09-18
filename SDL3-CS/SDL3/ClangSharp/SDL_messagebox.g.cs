@@ -50,7 +50,8 @@ namespace SDL
         public byte b;
     }
 
-    public enum SDL_MessageBoxColorType
+    [NativeTypeName("unsigned int")]
+    public enum SDL_MessageBoxColorType : uint
     {
         SDL_MESSAGEBOX_COLOR_BACKGROUND,
         SDL_MESSAGEBOX_COLOR_TEXT,

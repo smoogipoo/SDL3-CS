@@ -48,14 +48,16 @@ namespace SDL
         public int utc_offset;
     }
 
-    public enum SDL_DateFormat
+    [NativeTypeName("unsigned int")]
+    public enum SDL_DateFormat : uint
     {
         SDL_DATE_FORMAT_YYYYMMDD = 0,
         SDL_DATE_FORMAT_DDMMYYYY = 1,
         SDL_DATE_FORMAT_MMDDYYYY = 2,
     }
 
-    public enum SDL_TimeFormat
+    [NativeTypeName("unsigned int")]
+    public enum SDL_TimeFormat : uint
     {
         SDL_TIME_FORMAT_24HR = 0,
         SDL_TIME_FORMAT_12HR = 1,

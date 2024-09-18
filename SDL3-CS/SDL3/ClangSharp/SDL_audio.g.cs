@@ -28,7 +28,7 @@ using System.Runtime.InteropServices;
 
 namespace SDL
 {
-    [NativeTypeName("int")]
+    [NativeTypeName("unsigned int")]
     public enum SDL_AudioFormat : uint
     {
         SDL_AUDIO_UNKNOWN = 0x0000U,

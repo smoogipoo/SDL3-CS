@@ -28,13 +28,15 @@ using System.Runtime.InteropServices;
 
 namespace SDL
 {
-    public enum SDL_ScaleMode
+    [NativeTypeName("unsigned int")]
+    public enum SDL_ScaleMode : uint
     {
         SDL_SCALEMODE_NEAREST,
         SDL_SCALEMODE_LINEAR,
     }
 
-    public enum SDL_FlipMode
+    [NativeTypeName("unsigned int")]
+    public enum SDL_FlipMode : uint
     {
         SDL_FLIP_NONE,
         SDL_FLIP_HORIZONTAL,

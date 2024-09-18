@@ -30,7 +30,8 @@ using static SDL.SDL_PixelFormat;
 
 namespace SDL
 {
-    public enum SDL_PixelType
+    [NativeTypeName("unsigned int")]
+    public enum SDL_PixelType : uint
     {
         SDL_PIXELTYPE_UNKNOWN,
         SDL_PIXELTYPE_INDEX1,
@@ -47,14 +48,16 @@ namespace SDL
         SDL_PIXELTYPE_INDEX2,
     }
 
-    public enum SDL_BitmapOrder
+    [NativeTypeName("unsigned int")]
+    public enum SDL_BitmapOrder : uint
     {
         SDL_BITMAPORDER_NONE,
         SDL_BITMAPORDER_4321,
         SDL_BITMAPORDER_1234,
     }
 
-    public enum SDL_PackedOrder
+    [NativeTypeName("unsigned int")]
+    public enum SDL_PackedOrder : uint
     {
         SDL_PACKEDORDER_NONE,
         SDL_PACKEDORDER_XRGB,
@@ -67,7 +70,8 @@ namespace SDL
         SDL_PACKEDORDER_BGRA,
     }
 
-    public enum SDL_ArrayOrder
+    [NativeTypeName("unsigned int")]
+    public enum SDL_ArrayOrder : uint
     {
         SDL_ARRAYORDER_NONE,
         SDL_ARRAYORDER_RGB,
@@ -78,7 +82,8 @@ namespace SDL
         SDL_ARRAYORDER_ABGR,
     }
 
-    public enum SDL_PackedLayout
+    [NativeTypeName("unsigned int")]
+    public enum SDL_PackedLayout : uint
     {
         SDL_PACKEDLAYOUT_NONE,
         SDL_PACKEDLAYOUT_332,
@@ -91,7 +96,7 @@ namespace SDL
         SDL_PACKEDLAYOUT_1010102,
     }
 
-    [NativeTypeName("int")]
+    [NativeTypeName("unsigned int")]
     public enum SDL_PixelFormat : uint
     {
         SDL_PIXELFORMAT_UNKNOWN = 0,
@@ -160,21 +165,24 @@ namespace SDL
         SDL_PIXELFORMAT_EXTERNAL_OES = 0x2053454fU,
     }
 
-    public enum SDL_ColorType
+    [NativeTypeName("unsigned int")]
+    public enum SDL_ColorType : uint
     {
         SDL_COLOR_TYPE_UNKNOWN = 0,
         SDL_COLOR_TYPE_RGB = 1,
         SDL_COLOR_TYPE_YCBCR = 2,
     }
 
-    public enum SDL_ColorRange
+    [NativeTypeName("unsigned int")]
+    public enum SDL_ColorRange : uint
     {
         SDL_COLOR_RANGE_UNKNOWN = 0,
         SDL_COLOR_RANGE_LIMITED = 1,
         SDL_COLOR_RANGE_FULL = 2,
     }
 
-    public enum SDL_ColorPrimaries
+    [NativeTypeName("unsigned int")]
+    public enum SDL_ColorPrimaries : uint
     {
         SDL_COLOR_PRIMARIES_UNKNOWN = 0,
         SDL_COLOR_PRIMARIES_BT709 = 1,
@@ -192,7 +200,8 @@ namespace SDL
         SDL_COLOR_PRIMARIES_CUSTOM = 31,
     }
 
-    public enum SDL_TransferCharacteristics
+    [NativeTypeName("unsigned int")]
+    public enum SDL_TransferCharacteristics : uint
     {
         SDL_TRANSFER_CHARACTERISTICS_UNKNOWN = 0,
         SDL_TRANSFER_CHARACTERISTICS_BT709 = 1,
@@ -215,7 +224,8 @@ namespace SDL
         SDL_TRANSFER_CHARACTERISTICS_CUSTOM = 31,
     }
 
-    public enum SDL_MatrixCoefficients
+    [NativeTypeName("unsigned int")]
+    public enum SDL_MatrixCoefficients : uint
     {
         SDL_MATRIX_COEFFICIENTS_IDENTITY = 0,
         SDL_MATRIX_COEFFICIENTS_BT709 = 1,
@@ -234,7 +244,8 @@ namespace SDL
         SDL_MATRIX_COEFFICIENTS_CUSTOM = 31,
     }
 
-    public enum SDL_ChromaLocation
+    [NativeTypeName("unsigned int")]
+    public enum SDL_ChromaLocation : uint
     {
         SDL_CHROMA_LOCATION_NONE = 0,
         SDL_CHROMA_LOCATION_LEFT = 1,
@@ -242,7 +253,7 @@ namespace SDL
         SDL_CHROMA_LOCATION_TOPLEFT = 3,
     }
 
-    [NativeTypeName("int")]
+    [NativeTypeName("unsigned int")]
     public enum SDL_Colorspace : uint
     {
         SDL_COLORSPACE_UNKNOWN = 0,

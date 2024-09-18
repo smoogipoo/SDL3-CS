@@ -28,7 +28,8 @@ using System.Runtime.InteropServices;
 
 namespace SDL
 {
-    public enum SDL_IOStatus
+    [NativeTypeName("unsigned int")]
+    public enum SDL_IOStatus : uint
     {
         SDL_IO_STATUS_READY,
         SDL_IO_STATUS_ERROR,
@@ -38,7 +39,8 @@ namespace SDL
         SDL_IO_STATUS_WRITEONLY,
     }
 
-    public enum SDL_IOWhence
+    [NativeTypeName("unsigned int")]
+    public enum SDL_IOWhence : uint
     {
         SDL_IO_SEEK_SET,
         SDL_IO_SEEK_CUR,

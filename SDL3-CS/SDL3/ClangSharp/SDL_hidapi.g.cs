@@ -32,7 +32,8 @@ namespace SDL
     {
     }
 
-    public enum SDL_hid_bus_type
+    [NativeTypeName("unsigned int")]
+    public enum SDL_hid_bus_type : uint
     {
         SDL_HID_API_BUS_UNKNOWN = 0x00,
         SDL_HID_API_BUS_USB = 0x01,

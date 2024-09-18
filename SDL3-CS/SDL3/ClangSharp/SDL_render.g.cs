@@ -37,14 +37,16 @@ namespace SDL
         public SDL_FPoint tex_coord;
     }
 
-    public enum SDL_TextureAccess
+    [NativeTypeName("unsigned int")]
+    public enum SDL_TextureAccess : uint
     {
         SDL_TEXTUREACCESS_STATIC,
         SDL_TEXTUREACCESS_STREAMING,
         SDL_TEXTUREACCESS_TARGET,
     }
 
-    public enum SDL_RendererLogicalPresentation
+    [NativeTypeName("unsigned int")]
+    public enum SDL_RendererLogicalPresentation : uint
     {
         SDL_LOGICAL_PRESENTATION_DISABLED,
         SDL_LOGICAL_PRESENTATION_STRETCH,

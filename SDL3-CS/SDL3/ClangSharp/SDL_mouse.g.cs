@@ -31,7 +31,8 @@ namespace SDL
     {
     }
 
-    public enum SDL_SystemCursor
+    [NativeTypeName("unsigned int")]
+    public enum SDL_SystemCursor : uint
     {
         SDL_SYSTEM_CURSOR_DEFAULT,
         SDL_SYSTEM_CURSOR_TEXT,
@@ -56,7 +57,8 @@ namespace SDL
         SDL_SYSTEM_CURSOR_COUNT,
     }
 
-    public enum SDL_MouseWheelDirection
+    [NativeTypeName("unsigned int")]
+    public enum SDL_MouseWheelDirection : uint
     {
         SDL_MOUSEWHEEL_NORMAL,
         SDL_MOUSEWHEEL_FLIPPED,

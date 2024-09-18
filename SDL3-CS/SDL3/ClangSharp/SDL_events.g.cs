@@ -29,7 +29,8 @@ using System.Runtime.InteropServices;
 
 namespace SDL
 {
-    public enum SDL_EventType
+    [NativeTypeName("unsigned int")]
+    public enum SDL_EventType : uint
     {
         SDL_EVENT_FIRST = 0,
         SDL_EVENT_QUIT = 0x100,
@@ -1057,7 +1058,8 @@ namespace SDL
         }
     }
 
-    public enum SDL_EventAction
+    [NativeTypeName("unsigned int")]
+    public enum SDL_EventAction : uint
     {
         SDL_ADDEVENT,
         SDL_PEEKEVENT,

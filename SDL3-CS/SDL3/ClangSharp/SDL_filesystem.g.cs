@@ -28,7 +28,8 @@ using System.Runtime.InteropServices;
 
 namespace SDL
 {
-    public enum SDL_Folder
+    [NativeTypeName("unsigned int")]
+    public enum SDL_Folder : uint
     {
         SDL_FOLDER_HOME,
         SDL_FOLDER_DESKTOP,
@@ -44,7 +45,8 @@ namespace SDL
         SDL_FOLDER_COUNT,
     }
 
-    public enum SDL_PathType
+    [NativeTypeName("unsigned int")]
+    public enum SDL_PathType : uint
     {
         SDL_PATHTYPE_NONE,
         SDL_PATHTYPE_FILE,

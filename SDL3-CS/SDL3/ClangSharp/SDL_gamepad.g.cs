@@ -32,7 +32,8 @@ namespace SDL
     {
     }
 
-    public enum SDL_GamepadType
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GamepadType : uint
     {
         SDL_GAMEPAD_TYPE_UNKNOWN = 0,
         SDL_GAMEPAD_TYPE_STANDARD,
@@ -80,7 +81,8 @@ namespace SDL
         SDL_GAMEPAD_BUTTON_COUNT,
     }
 
-    public enum SDL_GamepadButtonLabel
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GamepadButtonLabel : uint
     {
         SDL_GAMEPAD_BUTTON_LABEL_UNKNOWN,
         SDL_GAMEPAD_BUTTON_LABEL_A,
@@ -105,7 +107,8 @@ namespace SDL
         SDL_GAMEPAD_AXIS_COUNT,
     }
 
-    public enum SDL_GamepadBindingType
+    [NativeTypeName("unsigned int")]
+    public enum SDL_GamepadBindingType : uint
     {
         SDL_GAMEPAD_BINDTYPE_NONE = 0,
         SDL_GAMEPAD_BINDTYPE_BUTTON,

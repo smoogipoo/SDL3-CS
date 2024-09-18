@@ -33,7 +33,8 @@ namespace SDL
     {
     }
 
-    public enum SDL_JoystickType
+    [NativeTypeName("unsigned int")]
+    public enum SDL_JoystickType : uint
     {
         SDL_JOYSTICK_TYPE_UNKNOWN,
         SDL_JOYSTICK_TYPE_GAMEPAD,

@@ -28,7 +28,8 @@ using System.Runtime.InteropServices;
 
 namespace SDL
 {
-    public enum SDL_PropertyType
+    [NativeTypeName("unsigned int")]
+    public enum SDL_PropertyType : uint
     {
         SDL_PROPERTY_TYPE_INVALID,
         SDL_PROPERTY_TYPE_POINTER,

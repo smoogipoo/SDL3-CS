@@ -28,7 +28,8 @@ using System.Runtime.InteropServices;
 
 namespace SDL
 {
-    public enum SDL_LogCategory
+    [NativeTypeName("unsigned int")]
+    public enum SDL_LogCategory : uint
     {
         SDL_LOG_CATEGORY_APPLICATION,
         SDL_LOG_CATEGORY_ERROR,
@@ -52,7 +53,8 @@ namespace SDL
         SDL_LOG_CATEGORY_CUSTOM,
     }
 
-    public enum SDL_LogPriority
+    [NativeTypeName("unsigned int")]
+    public enum SDL_LogPriority : uint
     {
         SDL_LOG_PRIORITY_VERBOSE = 1,
         SDL_LOG_PRIORITY_DEBUG,

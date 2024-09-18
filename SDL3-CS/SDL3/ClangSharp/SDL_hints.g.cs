@@ -28,7 +28,8 @@ using System.Runtime.InteropServices;
 
 namespace SDL
 {
-    public enum SDL_HintPriority
+    [NativeTypeName("unsigned int")]
+    public enum SDL_HintPriority : uint
     {
         SDL_HINT_DEFAULT,
         SDL_HINT_NORMAL,

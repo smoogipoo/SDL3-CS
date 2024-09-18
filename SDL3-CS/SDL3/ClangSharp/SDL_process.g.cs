@@ -32,7 +32,8 @@ namespace SDL
     {
     }
 
-    public enum SDL_ProcessIO
+    [NativeTypeName("unsigned int")]
+    public enum SDL_ProcessIO : uint
     {
         SDL_PROCESS_STDIO_INHERITED,
         SDL_PROCESS_STDIO_NULL,

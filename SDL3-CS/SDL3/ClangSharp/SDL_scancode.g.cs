@@ -25,7 +25,8 @@
 
 namespace SDL
 {
-    public enum SDL_Scancode
+    [NativeTypeName("unsigned int")]
+    public enum SDL_Scancode : uint
     {
         SDL_SCANCODE_UNKNOWN = 0,
         SDL_SCANCODE_A = 4,
