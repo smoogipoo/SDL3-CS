@@ -236,6 +236,7 @@ base_command = [
 
     "--define-macro",
     "SDL_FUNCTION_POINTER_IS_VOID_POINTER",
+    "SDL_DECLSPEC=",
 
     "--additional",
     "--undefine-macro=_WIN32",
