@@ -36,12 +36,13 @@ unsafe_prefix = "Unsafe_"
 repository_root = pathlib.Path(__file__).resolve().parents[1]
 
 SDL_lib_root = "External"
-SDL_libs = ["SDL", "SDL_image", "SDL_ttf", "SDL_mixer"]
+SDL_libs = ["SDL", "SDL_image", "SDL_ttf", "SDL_mixer", "SDL_shadercross"]
 SDL_lib_include_root = {
     "SDL3": SDL_lib_root + "/SDL/include",
     "SDL3_image": SDL_lib_root + "/SDL_image/include",
     "SDL3_ttf": SDL_lib_root + "/SDL_ttf/include",
     "SDL3_mixer": SDL_lib_root + "/SDL_mixer/include",
+    "SDL3_shadercross": SDL_lib_root + "/SDL_shadercross/include",
 }
 
 SDL3_header_base = "SDL3"  # base folder of header files
@@ -175,6 +176,7 @@ headers = [
     add("SDL3_ttf/SDL_ttf.h"),
     add("SDL3_ttf/SDL_textengine.h"),
     add("SDL3_mixer/SDL_mixer.h"),
+    add("SDL3_shadercross/SDL_shadercross.h"),
 ]
 
 
@@ -270,6 +272,7 @@ base_command = [
     "--include-directory", repository_root / SDL_lib_include_root["SDL3_image"],
     "--include-directory", repository_root / SDL_lib_include_root["SDL3_ttf"],
     "--include-directory", repository_root / SDL_lib_include_root["SDL3_mixer"],
+    "--include-directory", repository_root / SDL_lib_include_root["SDL3_shadercross"],
     "--namespace", "SDL",
 
     "--remap",
