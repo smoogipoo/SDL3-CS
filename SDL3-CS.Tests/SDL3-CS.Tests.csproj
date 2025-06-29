@@ -27,6 +27,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)..\native\$(NETCoreSdkRuntimeIdentifier)\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\External\SDL_image\test\sample.png">
       <Link>sample.png</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
