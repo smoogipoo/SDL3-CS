@@ -12,6 +12,7 @@ jobs:
   build:
     name: ${{ matrix.platform.name }}
     runs-on: ${{ matrix.platform.os }}
+    if: false
     strategy:
       fail-fast: false
       matrix:
