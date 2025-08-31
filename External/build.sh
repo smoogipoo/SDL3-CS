@@ -115,6 +115,7 @@ if [[ $RUNNER_OS == 'Linux' ]]; then
     git config --global --add safe.directory $PWD/SDL_image
     git config --global --add safe.directory $PWD/SDL_ttf
     git config --global --add safe.directory $PWD/SDL_mixer
+    git config --global --add safe.directory $PWD/SDL_shadercross
 fi
 
 CMAKE_INSTALL_PREFIX="$PWD/install_output"
@@ -181,4 +182,8 @@ run_cmake SDL_image ${OUTPUT_LIB/variant/_image} -DCMAKE_PREFIX_PATH=$CMAKE_PREF
 # See: https://github.com/libsdl-org/SDL_mixer/issues/745
 run_cmake SDL_mixer ${OUTPUT_LIB/variant/_mixer} -DCMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH -DSDLMIXER_MP3_MPG123=OFF -DSDLMIXER_FLAC_LIBFLAC=OFF -DSDLMIXER_DEPS_SHARED=OFF -DSDLMIXER_VENDORED=ON
 
+# Build SDL_shadercross
+run_cmake SDL_shadercross ${OUTPUT_LIB/variant/_shadercross} -DCMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH -DSDLSHADERCROSS_DXC=OFF -DSDLSHADERCROSS_INSTALL=ON -DSDLSHADERCROSS_SHARED=ON -DSDLSHADERCROSS_VENDORED=ON
+
 popd
+
