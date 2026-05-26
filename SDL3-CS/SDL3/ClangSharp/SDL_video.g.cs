@@ -336,6 +336,10 @@ namespace SDL
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("bool")]
+        public static extern SDLBool SDL_SetWindowFillDocument(SDL_Window* window, [NativeTypeName("bool")] SDLBool fill);
+
+        [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [return: NativeTypeName("bool")]
         public static extern SDLBool SDL_ShowWindow(SDL_Window* window);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
@@ -626,6 +630,9 @@ namespace SDL
         [NativeTypeName("#define SDL_WINDOW_KEYBOARD_GRABBED SDL_UINT64_C(0x0000000000100000)")]
         public const ulong SDL_WINDOW_KEYBOARD_GRABBED = 0x0000000000100000UL;
 
+        [NativeTypeName("#define SDL_WINDOW_FILL_DOCUMENT SDL_UINT64_C(0x0000000000200000)")]
+        public const ulong SDL_WINDOW_FILL_DOCUMENT = 0x0000000000200000UL;
+
         [NativeTypeName("#define SDL_WINDOW_VULKAN SDL_UINT64_C(0x0000000010000000)")]
         public const ulong SDL_WINDOW_VULKAN = 0x0000000010000000UL;
 
@@ -691,6 +698,9 @@ namespace SDL
 
         [NativeTypeName("#define SDL_PROP_DISPLAY_WAYLAND_WL_OUTPUT_POINTER \"SDL.display.wayland.wl_output\"")]
         public static ReadOnlySpan<byte> SDL_PROP_DISPLAY_WAYLAND_WL_OUTPUT_POINTER => "SDL.display.wayland.wl_output"u8;
+
+        [NativeTypeName("#define SDL_PROP_DISPLAY_WINDOWS_HMONITOR_POINTER \"SDL.display.windows.hmonitor\"")]
+        public static ReadOnlySpan<byte> SDL_PROP_DISPLAY_WINDOWS_HMONITOR_POINTER => "SDL.display.windows.hmonitor"u8;
 
         [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_ALWAYS_ON_TOP_BOOLEAN \"SDL.window.create.always_on_top\"")]
         public static ReadOnlySpan<byte> SDL_PROP_WINDOW_CREATE_ALWAYS_ON_TOP_BOOLEAN => "SDL.window.create.always_on_top"u8;
@@ -779,6 +789,9 @@ namespace SDL
         [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_COCOA_VIEW_POINTER \"SDL.window.create.cocoa.view\"")]
         public static ReadOnlySpan<byte> SDL_PROP_WINDOW_CREATE_COCOA_VIEW_POINTER => "SDL.window.create.cocoa.view"u8;
 
+        [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_WINDOWSCENE_POINTER \"SDL.window.create.uikit.windowscene\"")]
+        public static ReadOnlySpan<byte> SDL_PROP_WINDOW_CREATE_WINDOWSCENE_POINTER => "SDL.window.create.uikit.windowscene"u8;
+
         [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_WAYLAND_SURFACE_ROLE_CUSTOM_BOOLEAN \"SDL.window.create.wayland.surface_role_custom\"")]
         public static ReadOnlySpan<byte> SDL_PROP_WINDOW_CREATE_WAYLAND_SURFACE_ROLE_CUSTOM_BOOLEAN => "SDL.window.create.wayland.surface_role_custom"u8;
 
@@ -853,6 +866,12 @@ namespace SDL
 
         [NativeTypeName("#define SDL_PROP_WINDOW_OPENVR_OVERLAY_ID_NUMBER \"SDL.window.openvr.overlay_id\"")]
         public static ReadOnlySpan<byte> SDL_PROP_WINDOW_OPENVR_OVERLAY_ID_NUMBER => "SDL.window.openvr.overlay_id"u8;
+
+        [NativeTypeName("#define SDL_PROP_WINDOW_QNX_WINDOW_POINTER \"SDL.window.qnx.window\"")]
+        public static ReadOnlySpan<byte> SDL_PROP_WINDOW_QNX_WINDOW_POINTER => "SDL.window.qnx.window"u8;
+
+        [NativeTypeName("#define SDL_PROP_WINDOW_QNX_SURFACE_POINTER \"SDL.window.qnx.surface\"")]
+        public static ReadOnlySpan<byte> SDL_PROP_WINDOW_QNX_SURFACE_POINTER => "SDL.window.qnx.surface"u8;
 
         [NativeTypeName("#define SDL_PROP_WINDOW_VIVANTE_DISPLAY_POINTER \"SDL.window.vivante.display\"")]
         public static ReadOnlySpan<byte> SDL_PROP_WINDOW_VIVANTE_DISPLAY_POINTER => "SDL.window.vivante.display"u8;

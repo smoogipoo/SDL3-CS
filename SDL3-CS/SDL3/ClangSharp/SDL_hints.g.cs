@@ -121,6 +121,9 @@ namespace SDL
         [NativeTypeName("#define SDL_HINT_AUDIO_DEVICE_STREAM_ROLE \"SDL_AUDIO_DEVICE_STREAM_ROLE\"")]
         public static ReadOnlySpan<byte> SDL_HINT_AUDIO_DEVICE_STREAM_ROLE => "SDL_AUDIO_DEVICE_STREAM_ROLE"u8;
 
+        [NativeTypeName("#define SDL_HINT_AUDIO_DEVICE_RAW_STREAM \"SDL_AUDIO_DEVICE_RAW_STREAM\"")]
+        public static ReadOnlySpan<byte> SDL_HINT_AUDIO_DEVICE_RAW_STREAM => "SDL_AUDIO_DEVICE_RAW_STREAM"u8;
+
         [NativeTypeName("#define SDL_HINT_AUDIO_DISK_INPUT_FILE \"SDL_AUDIO_DISK_INPUT_FILE\"")]
         public static ReadOnlySpan<byte> SDL_HINT_AUDIO_DISK_INPUT_FILE => "SDL_AUDIO_DISK_INPUT_FILE"u8;
 
@@ -168,6 +171,9 @@ namespace SDL
 
         [NativeTypeName("#define SDL_HINT_DISPLAY_USABLE_BOUNDS \"SDL_DISPLAY_USABLE_BOUNDS\"")]
         public static ReadOnlySpan<byte> SDL_HINT_DISPLAY_USABLE_BOUNDS => "SDL_DISPLAY_USABLE_BOUNDS"u8;
+
+        [NativeTypeName("#define SDL_HINT_INVALID_PARAM_CHECKS \"SDL_INVALID_PARAM_CHECKS\"")]
+        public static ReadOnlySpan<byte> SDL_HINT_INVALID_PARAM_CHECKS => "SDL_INVALID_PARAM_CHECKS"u8;
 
         [NativeTypeName("#define SDL_HINT_EMSCRIPTEN_ASYNCIFY \"SDL_EMSCRIPTEN_ASYNCIFY\"")]
         public static ReadOnlySpan<byte> SDL_HINT_EMSCRIPTEN_ASYNCIFY => "SDL_EMSCRIPTEN_ASYNCIFY"u8;
@@ -229,6 +235,9 @@ namespace SDL
         [NativeTypeName("#define SDL_HINT_HIDAPI_LIBUSB \"SDL_HIDAPI_LIBUSB\"")]
         public static ReadOnlySpan<byte> SDL_HINT_HIDAPI_LIBUSB => "SDL_HIDAPI_LIBUSB"u8;
 
+        [NativeTypeName("#define SDL_HINT_HIDAPI_LIBUSB_GAMECUBE \"SDL_HIDAPI_LIBUSB_GAMECUBE\"")]
+        public static ReadOnlySpan<byte> SDL_HINT_HIDAPI_LIBUSB_GAMECUBE => "SDL_HIDAPI_LIBUSB_GAMECUBE"u8;
+
         [NativeTypeName("#define SDL_HINT_HIDAPI_LIBUSB_WHITELIST \"SDL_HIDAPI_LIBUSB_WHITELIST\"")]
         public static ReadOnlySpan<byte> SDL_HINT_HIDAPI_LIBUSB_WHITELIST => "SDL_HIDAPI_LIBUSB_WHITELIST"u8;
 
@@ -237,6 +246,9 @@ namespace SDL
 
         [NativeTypeName("#define SDL_HINT_GPU_DRIVER \"SDL_GPU_DRIVER\"")]
         public static ReadOnlySpan<byte> SDL_HINT_GPU_DRIVER => "SDL_GPU_DRIVER"u8;
+
+        [NativeTypeName("#define SDL_HINT_OPENXR_LIBRARY \"SDL_OPENXR_LIBRARY\"")]
+        public static ReadOnlySpan<byte> SDL_HINT_OPENXR_LIBRARY => "SDL_OPENXR_LIBRARY"u8;
 
         [NativeTypeName("#define SDL_HINT_HIDAPI_ENUMERATE_ONLY_CONTROLLERS \"SDL_HIDAPI_ENUMERATE_ONLY_CONTROLLERS\"")]
         public static ReadOnlySpan<byte> SDL_HINT_HIDAPI_ENUMERATE_ONLY_CONTROLLERS => "SDL_HIDAPI_ENUMERATE_ONLY_CONTROLLERS"u8;
@@ -355,8 +367,14 @@ namespace SDL
         [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_SINPUT \"SDL_JOYSTICK_HIDAPI_SINPUT\"")]
         public static ReadOnlySpan<byte> SDL_HINT_JOYSTICK_HIDAPI_SINPUT => "SDL_JOYSTICK_HIDAPI_SINPUT"u8;
 
+        [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_ZUIKI \"SDL_JOYSTICK_HIDAPI_ZUIKI\"")]
+        public static ReadOnlySpan<byte> SDL_HINT_JOYSTICK_HIDAPI_ZUIKI => "SDL_JOYSTICK_HIDAPI_ZUIKI"u8;
+
         [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_FLYDIGI \"SDL_JOYSTICK_HIDAPI_FLYDIGI\"")]
         public static ReadOnlySpan<byte> SDL_HINT_JOYSTICK_HIDAPI_FLYDIGI => "SDL_JOYSTICK_HIDAPI_FLYDIGI"u8;
+
+        [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_GAMESIR \"SDL_JOYSTICK_HIDAPI_GAMESIR\"")]
+        public static ReadOnlySpan<byte> SDL_HINT_JOYSTICK_HIDAPI_GAMESIR => "SDL_JOYSTICK_HIDAPI_GAMESIR"u8;
 
         [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_SWITCH \"SDL_JOYSTICK_HIDAPI_SWITCH\"")]
         public static ReadOnlySpan<byte> SDL_HINT_JOYSTICK_HIDAPI_SWITCH => "SDL_JOYSTICK_HIDAPI_SWITCH"u8;
@@ -463,6 +481,9 @@ namespace SDL
         [NativeTypeName("#define SDL_HINT_KMSDRM_REQUIRE_DRM_MASTER \"SDL_KMSDRM_REQUIRE_DRM_MASTER\"")]
         public static ReadOnlySpan<byte> SDL_HINT_KMSDRM_REQUIRE_DRM_MASTER => "SDL_KMSDRM_REQUIRE_DRM_MASTER"u8;
 
+        [NativeTypeName("#define SDL_HINT_KMSDRM_ATOMIC \"SDL_KMSDRM_ATOMIC\"")]
+        public static ReadOnlySpan<byte> SDL_HINT_KMSDRM_ATOMIC => "SDL_KMSDRM_ATOMIC"u8;
+
         [NativeTypeName("#define SDL_HINT_LOGGING \"SDL_LOGGING\"")]
         public static ReadOnlySpan<byte> SDL_HINT_LOGGING => "SDL_LOGGING"u8;
 
@@ -481,6 +502,9 @@ namespace SDL
         [NativeTypeName("#define SDL_HINT_MAC_SCROLL_MOMENTUM \"SDL_MAC_SCROLL_MOMENTUM\"")]
         public static ReadOnlySpan<byte> SDL_HINT_MAC_SCROLL_MOMENTUM => "SDL_MAC_SCROLL_MOMENTUM"u8;
 
+        [NativeTypeName("#define SDL_HINT_MAC_PRESS_AND_HOLD \"SDL_MAC_PRESS_AND_HOLD\"")]
+        public static ReadOnlySpan<byte> SDL_HINT_MAC_PRESS_AND_HOLD => "SDL_MAC_PRESS_AND_HOLD"u8;
+
         [NativeTypeName("#define SDL_HINT_MAIN_CALLBACK_RATE \"SDL_MAIN_CALLBACK_RATE\"")]
         public static ReadOnlySpan<byte> SDL_HINT_MAIN_CALLBACK_RATE => "SDL_MAIN_CALLBACK_RATE"u8;
 
@@ -495,6 +519,9 @@ namespace SDL
 
         [NativeTypeName("#define SDL_HINT_MOUSE_DEFAULT_SYSTEM_CURSOR \"SDL_MOUSE_DEFAULT_SYSTEM_CURSOR\"")]
         public static ReadOnlySpan<byte> SDL_HINT_MOUSE_DEFAULT_SYSTEM_CURSOR => "SDL_MOUSE_DEFAULT_SYSTEM_CURSOR"u8;
+
+        [NativeTypeName("#define SDL_HINT_MOUSE_DPI_SCALE_CURSORS \"SDL_MOUSE_DPI_SCALE_CURSORS\"")]
+        public static ReadOnlySpan<byte> SDL_HINT_MOUSE_DPI_SCALE_CURSORS => "SDL_MOUSE_DPI_SCALE_CURSORS"u8;
 
         [NativeTypeName("#define SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE \"SDL_MOUSE_EMULATE_WARP_WITH_RELATIVE\"")]
         public static ReadOnlySpan<byte> SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE => "SDL_MOUSE_EMULATE_WARP_WITH_RELATIVE"u8;
@@ -537,6 +564,9 @@ namespace SDL
 
         [NativeTypeName("#define SDL_HINT_OPENGL_ES_DRIVER \"SDL_OPENGL_ES_DRIVER\"")]
         public static ReadOnlySpan<byte> SDL_HINT_OPENGL_ES_DRIVER => "SDL_OPENGL_ES_DRIVER"u8;
+
+        [NativeTypeName("#define SDL_HINT_OPENGL_FORCE_SRGB_FRAMEBUFFER \"SDL_OPENGL_FORCE_SRGB_FRAMEBUFFER\"")]
+        public static ReadOnlySpan<byte> SDL_HINT_OPENGL_FORCE_SRGB_FRAMEBUFFER => "SDL_OPENGL_FORCE_SRGB_FRAMEBUFFER"u8;
 
         [NativeTypeName("#define SDL_HINT_OPENVR_LIBRARY \"SDL_OPENVR_LIBRARY\"")]
         public static ReadOnlySpan<byte> SDL_HINT_OPENVR_LIBRARY => "SDL_OPENVR_LIBRARY"u8;
@@ -591,6 +621,18 @@ namespace SDL
 
         [NativeTypeName("#define SDL_HINT_ROG_GAMEPAD_MICE_EXCLUDED \"SDL_ROG_GAMEPAD_MICE_EXCLUDED\"")]
         public static ReadOnlySpan<byte> SDL_HINT_ROG_GAMEPAD_MICE_EXCLUDED => "SDL_ROG_GAMEPAD_MICE_EXCLUDED"u8;
+
+        [NativeTypeName("#define SDL_HINT_PS2_GS_WIDTH \"SDL_PS2_GS_WIDTH\"")]
+        public static ReadOnlySpan<byte> SDL_HINT_PS2_GS_WIDTH => "SDL_PS2_GS_WIDTH"u8;
+
+        [NativeTypeName("#define SDL_HINT_PS2_GS_HEIGHT \"SDL_PS2_GS_HEIGHT\"")]
+        public static ReadOnlySpan<byte> SDL_HINT_PS2_GS_HEIGHT => "SDL_PS2_GS_HEIGHT"u8;
+
+        [NativeTypeName("#define SDL_HINT_PS2_GS_PROGRESSIVE \"SDL_PS2_GS_PROGRESSIVE\"")]
+        public static ReadOnlySpan<byte> SDL_HINT_PS2_GS_PROGRESSIVE => "SDL_PS2_GS_PROGRESSIVE"u8;
+
+        [NativeTypeName("#define SDL_HINT_PS2_GS_MODE \"SDL_PS2_GS_MODE\"")]
+        public static ReadOnlySpan<byte> SDL_HINT_PS2_GS_MODE => "SDL_PS2_GS_MODE"u8;
 
         [NativeTypeName("#define SDL_HINT_RPI_VIDEO_LAYER \"SDL_RPI_VIDEO_LAYER\"")]
         public static ReadOnlySpan<byte> SDL_HINT_RPI_VIDEO_LAYER => "SDL_RPI_VIDEO_LAYER"u8;
@@ -651,6 +693,9 @@ namespace SDL
 
         [NativeTypeName("#define SDL_HINT_VIDEO_MAC_FULLSCREEN_MENU_VISIBILITY \"SDL_VIDEO_MAC_FULLSCREEN_MENU_VISIBILITY\"")]
         public static ReadOnlySpan<byte> SDL_HINT_VIDEO_MAC_FULLSCREEN_MENU_VISIBILITY => "SDL_VIDEO_MAC_FULLSCREEN_MENU_VISIBILITY"u8;
+
+        [NativeTypeName("#define SDL_HINT_VIDEO_METAL_AUTO_RESIZE_DRAWABLE \"SDL_VIDEO_METAL_AUTO_RESIZE_DRAWABLE\"")]
+        public static ReadOnlySpan<byte> SDL_HINT_VIDEO_METAL_AUTO_RESIZE_DRAWABLE => "SDL_VIDEO_METAL_AUTO_RESIZE_DRAWABLE"u8;
 
         [NativeTypeName("#define SDL_HINT_VIDEO_MATCH_EXCLUSIVE_MODE_ON_MOVE \"SDL_VIDEO_MATCH_EXCLUSIVE_MODE_ON_MOVE\"")]
         public static ReadOnlySpan<byte> SDL_HINT_VIDEO_MATCH_EXCLUSIVE_MODE_ON_MOVE => "SDL_VIDEO_MATCH_EXCLUSIVE_MODE_ON_MOVE"u8;
@@ -772,6 +817,9 @@ namespace SDL
         [NativeTypeName("#define SDL_HINT_WINDOWS_RAW_KEYBOARD \"SDL_WINDOWS_RAW_KEYBOARD\"")]
         public static ReadOnlySpan<byte> SDL_HINT_WINDOWS_RAW_KEYBOARD => "SDL_WINDOWS_RAW_KEYBOARD"u8;
 
+        [NativeTypeName("#define SDL_HINT_WINDOWS_RAW_KEYBOARD_EXCLUDE_HOTKEYS \"SDL_WINDOWS_RAW_KEYBOARD_EXCLUDE_HOTKEYS\"")]
+        public static ReadOnlySpan<byte> SDL_HINT_WINDOWS_RAW_KEYBOARD_EXCLUDE_HOTKEYS => "SDL_WINDOWS_RAW_KEYBOARD_EXCLUDE_HOTKEYS"u8;
+
         [NativeTypeName("#define SDL_HINT_WINDOWS_FORCE_SEMAPHORE_KERNEL \"SDL_WINDOWS_FORCE_SEMAPHORE_KERNEL\"")]
         public static ReadOnlySpan<byte> SDL_HINT_WINDOWS_FORCE_SEMAPHORE_KERNEL => "SDL_WINDOWS_FORCE_SEMAPHORE_KERNEL"u8;
 
@@ -807,8 +855,5 @@ namespace SDL
 
         [NativeTypeName("#define SDL_HINT_PEN_TOUCH_EVENTS \"SDL_PEN_TOUCH_EVENTS\"")]
         public static ReadOnlySpan<byte> SDL_HINT_PEN_TOUCH_EVENTS => "SDL_PEN_TOUCH_EVENTS"u8;
-
-        [NativeTypeName("#define SDL_HINT_DEBUG_LOGGING \"SDL_DEBUG_LOGGING\"")]
-        public static ReadOnlySpan<byte> SDL_HINT_DEBUG_LOGGING => "SDL_DEBUG_LOGGING"u8;
     }
 }
