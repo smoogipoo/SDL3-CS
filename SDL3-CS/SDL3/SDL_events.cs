@@ -66,11 +66,11 @@ namespace SDL
                 return SDL_PeepEvents(eventsPtr, events.Length, action, (uint)minType, (uint)maxType);
         }
 
-        public static SDLBool SDL_HasEvent(SDL_EventType type) => SDL_HasEvent((uint)type);
+        public static bool SDL_HasEvent(SDL_EventType type) => SDL_HasEvent((uint)type);
         public static void SDL_FlushEvent(SDL_EventType type) => SDL_FlushEvent((uint)type);
         public static void SDL_FlushEvents(SDL_EventType minType, SDL_EventType maxType) => SDL_FlushEvents((uint)minType, (uint)maxType);
         public static void SDL_SetEventEnabled(SDL_EventType type, bool enabled) => SDL_SetEventEnabled((uint)type, enabled);
-        public static SDLBool SDL_EventEnabled(SDL_EventType type) => SDL_EventEnabled((uint)type);
+        public static bool SDL_EventEnabled(SDL_EventType type) => SDL_EventEnabled((uint)type);
 
         public static string SDL_GetEventDescription(SDL_Event @event)
         {

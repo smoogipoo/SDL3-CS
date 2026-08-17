@@ -34,34 +34,34 @@ namespace SDL
         public uint version;
 
         [NativeTypeName("bool (*)(void *)")]
-        public delegate* unmanaged[Cdecl]<IntPtr, SDLBool> close;
+        public delegate* unmanaged[Cdecl]<IntPtr, bool> close;
 
         [NativeTypeName("bool (*)(void *)")]
-        public delegate* unmanaged[Cdecl]<IntPtr, SDLBool> ready;
+        public delegate* unmanaged[Cdecl]<IntPtr, bool> ready;
 
         [NativeTypeName("bool (*)(void *, const char *, SDL_EnumerateDirectoryCallback, void *)")]
-        public delegate* unmanaged[Cdecl]<IntPtr, byte*, delegate* unmanaged[Cdecl]<IntPtr, byte*, byte*, SDL_EnumerationResult>, IntPtr, SDLBool> enumerate;
+        public delegate* unmanaged[Cdecl]<IntPtr, byte*, delegate* unmanaged[Cdecl]<IntPtr, byte*, byte*, SDL_EnumerationResult>, IntPtr, bool> enumerate;
 
         [NativeTypeName("bool (*)(void *, const char *, SDL_PathInfo *)")]
-        public delegate* unmanaged[Cdecl]<IntPtr, byte*, SDL_PathInfo*, SDLBool> info;
+        public delegate* unmanaged[Cdecl]<IntPtr, byte*, SDL_PathInfo*, bool> info;
 
         [NativeTypeName("bool (*)(void *, const char *, void *, Uint64)")]
-        public delegate* unmanaged[Cdecl]<IntPtr, byte*, IntPtr, ulong, SDLBool> read_file;
+        public delegate* unmanaged[Cdecl]<IntPtr, byte*, IntPtr, ulong, bool> read_file;
 
         [NativeTypeName("bool (*)(void *, const char *, const void *, Uint64)")]
-        public delegate* unmanaged[Cdecl]<IntPtr, byte*, IntPtr, ulong, SDLBool> write_file;
+        public delegate* unmanaged[Cdecl]<IntPtr, byte*, IntPtr, ulong, bool> write_file;
 
         [NativeTypeName("bool (*)(void *, const char *)")]
-        public delegate* unmanaged[Cdecl]<IntPtr, byte*, SDLBool> mkdir;
+        public delegate* unmanaged[Cdecl]<IntPtr, byte*, bool> mkdir;
 
         [NativeTypeName("bool (*)(void *, const char *)")]
-        public delegate* unmanaged[Cdecl]<IntPtr, byte*, SDLBool> remove;
+        public delegate* unmanaged[Cdecl]<IntPtr, byte*, bool> remove;
 
         [NativeTypeName("bool (*)(void *, const char *, const char *)")]
-        public delegate* unmanaged[Cdecl]<IntPtr, byte*, byte*, SDLBool> rename;
+        public delegate* unmanaged[Cdecl]<IntPtr, byte*, byte*, bool> rename;
 
         [NativeTypeName("bool (*)(void *, const char *, const char *)")]
-        public delegate* unmanaged[Cdecl]<IntPtr, byte*, byte*, SDLBool> copy;
+        public delegate* unmanaged[Cdecl]<IntPtr, byte*, byte*, bool> copy;
 
         [NativeTypeName("Uint64 (*)(void *)")]
         public delegate* unmanaged[Cdecl]<IntPtr, ulong> space_remaining;
@@ -86,48 +86,37 @@ namespace SDL
         public static extern SDL_Storage* SDL_OpenStorage([NativeTypeName("const SDL_StorageInterface *")] SDL_StorageInterface* iface, [NativeTypeName("void*")] IntPtr userdata);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_CloseStorage(SDL_Storage* storage);
+        public static extern bool SDL_CloseStorage(SDL_Storage* storage);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_StorageReady(SDL_Storage* storage);
+        public static extern bool SDL_StorageReady(SDL_Storage* storage);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_GetStorageFileSize(SDL_Storage* storage, [NativeTypeName("const char *")] byte* path, [NativeTypeName("Uint64 *")] ulong* length);
+        public static extern bool SDL_GetStorageFileSize(SDL_Storage* storage, [NativeTypeName("const char *")] byte* path, [NativeTypeName("Uint64 *")] ulong* length);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_ReadStorageFile(SDL_Storage* storage, [NativeTypeName("const char *")] byte* path, [NativeTypeName("void*")] IntPtr destination, [NativeTypeName("Uint64")] ulong length);
+        public static extern bool SDL_ReadStorageFile(SDL_Storage* storage, [NativeTypeName("const char *")] byte* path, [NativeTypeName("void*")] IntPtr destination, [NativeTypeName("Uint64")] ulong length);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_WriteStorageFile(SDL_Storage* storage, [NativeTypeName("const char *")] byte* path, [NativeTypeName("const void *")] IntPtr source, [NativeTypeName("Uint64")] ulong length);
+        public static extern bool SDL_WriteStorageFile(SDL_Storage* storage, [NativeTypeName("const char *")] byte* path, [NativeTypeName("const void *")] IntPtr source, [NativeTypeName("Uint64")] ulong length);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_CreateStorageDirectory(SDL_Storage* storage, [NativeTypeName("const char *")] byte* path);
+        public static extern bool SDL_CreateStorageDirectory(SDL_Storage* storage, [NativeTypeName("const char *")] byte* path);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_EnumerateStorageDirectory(SDL_Storage* storage, [NativeTypeName("const char *")] byte* path, [NativeTypeName("SDL_EnumerateDirectoryCallback")] delegate* unmanaged[Cdecl]<IntPtr, byte*, byte*, SDL_EnumerationResult> callback, [NativeTypeName("void*")] IntPtr userdata);
+        public static extern bool SDL_EnumerateStorageDirectory(SDL_Storage* storage, [NativeTypeName("const char *")] byte* path, [NativeTypeName("SDL_EnumerateDirectoryCallback")] delegate* unmanaged[Cdecl]<IntPtr, byte*, byte*, SDL_EnumerationResult> callback, [NativeTypeName("void*")] IntPtr userdata);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_RemoveStoragePath(SDL_Storage* storage, [NativeTypeName("const char *")] byte* path);
+        public static extern bool SDL_RemoveStoragePath(SDL_Storage* storage, [NativeTypeName("const char *")] byte* path);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_RenameStoragePath(SDL_Storage* storage, [NativeTypeName("const char *")] byte* oldpath, [NativeTypeName("const char *")] byte* newpath);
+        public static extern bool SDL_RenameStoragePath(SDL_Storage* storage, [NativeTypeName("const char *")] byte* oldpath, [NativeTypeName("const char *")] byte* newpath);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_CopyStorageFile(SDL_Storage* storage, [NativeTypeName("const char *")] byte* oldpath, [NativeTypeName("const char *")] byte* newpath);
+        public static extern bool SDL_CopyStorageFile(SDL_Storage* storage, [NativeTypeName("const char *")] byte* oldpath, [NativeTypeName("const char *")] byte* newpath);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_GetStoragePathInfo(SDL_Storage* storage, [NativeTypeName("const char *")] byte* path, SDL_PathInfo* info);
+        public static extern bool SDL_GetStoragePathInfo(SDL_Storage* storage, [NativeTypeName("const char *")] byte* path, SDL_PathInfo* info);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("Uint64")]

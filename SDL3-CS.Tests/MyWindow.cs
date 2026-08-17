@@ -37,7 +37,7 @@ namespace SDL.Tests
         }
 
         [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
-        private static SDLBool wndProc(IntPtr userdata, MSG* message)
+        private static bool wndProc(IntPtr userdata, MSG* message)
         {
             var handle = new ObjectHandle<MyWindow>(userdata);
 
@@ -51,7 +51,7 @@ namespace SDL.Tests
 
         // ReSharper disable once UseCollectionExpression
         [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
-        private static SDLBool nativeFilter(IntPtr userdata, SDL_Event* e)
+        private static bool nativeFilter(IntPtr userdata, SDL_Event* e)
         {
             var handle = new ObjectHandle<MyWindow>(userdata);
             if (handle.GetTarget(out var window))

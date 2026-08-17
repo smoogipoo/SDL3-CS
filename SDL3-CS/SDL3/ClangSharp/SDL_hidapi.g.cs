@@ -154,7 +154,7 @@ namespace SDL
         public static extern int SDL_hid_get_report_descriptor(SDL_hid_device* dev, [NativeTypeName("unsigned char *")] byte* buf, [NativeTypeName("size_t")] nuint buf_size);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void SDL_hid_ble_scan([NativeTypeName("bool")] SDLBool active);
+        public static extern void SDL_hid_ble_scan(bool active);
 
         [NativeTypeName("#define SDL_PROP_HIDAPI_LIBUSB_DEVICE_HANDLE_POINTER \"SDL.hidapi.libusb.device.handle\"")]
         public static ReadOnlySpan<byte> SDL_PROP_HIDAPI_LIBUSB_DEVICE_HANDLE_POINTER => "SDL.hidapi.libusb.device.handle"u8;

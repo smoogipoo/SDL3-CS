@@ -30,7 +30,6 @@ namespace SDL
     public static unsafe partial class SDL3
     {
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_OpenURL([NativeTypeName("const char *")] byte* url);
+        public static extern bool SDL_OpenURL([NativeTypeName("const char *")] byte* url);
     }
 }

@@ -32,13 +32,12 @@ namespace SDL
     public static unsafe partial class SDL3
     {
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
         [SupportedOSPlatform("iOS")]
-        public static extern SDLBool SDL_SetiOSAnimationCallback(SDL_Window* window, int interval, [NativeTypeName("SDL_iOSAnimationCallback")] delegate* unmanaged[Cdecl]<IntPtr, void> callback, [NativeTypeName("void*")] IntPtr callbackParam);
+        public static extern bool SDL_SetiOSAnimationCallback(SDL_Window* window, int interval, [NativeTypeName("SDL_iOSAnimationCallback")] delegate* unmanaged[Cdecl]<IntPtr, void> callback, [NativeTypeName("void*")] IntPtr callbackParam);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [SupportedOSPlatform("iOS")]
-        public static extern void SDL_SetiOSEventPump([NativeTypeName("bool")] SDLBool enabled);
+        public static extern void SDL_SetiOSEventPump(bool enabled);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [SupportedOSPlatform("iOS")]

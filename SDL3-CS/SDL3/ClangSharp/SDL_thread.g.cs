@@ -67,8 +67,7 @@ namespace SDL
         public static extern SDL_ThreadID SDL_GetThreadID(SDL_Thread* thread);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_SetCurrentThreadPriority(SDL_ThreadPriority priority);
+        public static extern bool SDL_SetCurrentThreadPriority(SDL_ThreadPriority priority);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void SDL_WaitThread(SDL_Thread* thread, int* status);
@@ -84,8 +83,7 @@ namespace SDL
         public static extern IntPtr SDL_GetTLS(SDL_TLSID* id);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_SetTLS(SDL_TLSID* id, [NativeTypeName("const void *")] IntPtr value, [NativeTypeName("SDL_TLSDestructorCallback")] delegate* unmanaged[Cdecl]<IntPtr, void> destructor);
+        public static extern bool SDL_SetTLS(SDL_TLSID* id, [NativeTypeName("const void *")] IntPtr value, [NativeTypeName("SDL_TLSDestructorCallback")] delegate* unmanaged[Cdecl]<IntPtr, void> destructor);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void SDL_CleanupTLS();

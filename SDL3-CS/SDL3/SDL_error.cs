@@ -6,17 +6,23 @@ namespace SDL
     public static partial class SDL3
     {
         [Macro]
-        public static unsafe SDLBool SDL_Unsupported()
+        public static unsafe bool SDL_Unsupported()
         {
             fixed (byte* fmt = "That operation is not supported\0"u8)
-                return SDL_SetError(fmt, __arglist());
+            {
+                byte** vaList = stackalloc byte*[1];
+                return SDL_SetErrorV(fmt, (byte*)vaList);
+            }
         }
 
         [Macro]
-        public static unsafe SDLBool SDL_InvalidParamError([NativeTypeName("const char *")] byte* param)
+        public static unsafe bool SDL_InvalidParamError([NativeTypeName("const char *")] byte* param)
         {
             fixed (byte* fmt = "Parameter '%s' is invalid\0"u8)
-                return SDL_SetError(fmt, __arglist(param));
+            {
+                byte** vaList = stackalloc byte*[] { param };
+                return SDL_SetErrorV(fmt, (byte*)vaList);
+            }
         }
     }
 }

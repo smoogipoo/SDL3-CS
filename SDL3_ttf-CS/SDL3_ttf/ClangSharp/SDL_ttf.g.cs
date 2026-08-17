@@ -141,14 +141,13 @@ namespace SDL
         public static extern void TTF_GetHarfBuzzVersion(int* major, int* minor, int* patch);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_Init();
+        public static extern bool TTF_Init();
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern TTF_Font* TTF_OpenFont([NativeTypeName("const char *")] byte* file, float ptsize);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern TTF_Font* TTF_OpenFontIO(SDL_IOStream* src, [NativeTypeName("bool")] SDLBool closeio, float ptsize);
+        public static extern TTF_Font* TTF_OpenFontIO(SDL_IOStream* src, bool closeio, float ptsize);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern TTF_Font* TTF_OpenFontWithProperties(SDL_PropertiesID props);
@@ -164,8 +163,7 @@ namespace SDL
         public static extern uint TTF_GetFontGeneration(TTF_Font* font);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_AddFallbackFont(TTF_Font* font, TTF_Font* fallback);
+        public static extern bool TTF_AddFallbackFont(TTF_Font* font, TTF_Font* fallback);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void TTF_RemoveFallbackFont(TTF_Font* font, TTF_Font* fallback);
@@ -174,19 +172,16 @@ namespace SDL
         public static extern void TTF_ClearFallbackFonts(TTF_Font* font);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_SetFontSize(TTF_Font* font, float ptsize);
+        public static extern bool TTF_SetFontSize(TTF_Font* font, float ptsize);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_SetFontSizeDPI(TTF_Font* font, float ptsize, int hdpi, int vdpi);
+        public static extern bool TTF_SetFontSizeDPI(TTF_Font* font, float ptsize, int hdpi, int vdpi);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float TTF_GetFontSize(TTF_Font* font);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_GetFontDPI(TTF_Font* font, int* hdpi, int* vdpi);
+        public static extern bool TTF_GetFontDPI(TTF_Font* font, int* hdpi, int* vdpi);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void TTF_SetFontStyle(TTF_Font* font, TTF_FontStyleFlags style);
@@ -195,8 +190,7 @@ namespace SDL
         public static extern TTF_FontStyleFlags TTF_GetFontStyle([NativeTypeName("const TTF_Font *")] TTF_Font* font);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_SetFontOutline(TTF_Font* font, int outline);
+        public static extern bool TTF_SetFontOutline(TTF_Font* font, int outline);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int TTF_GetFontOutline([NativeTypeName("const TTF_Font *")] TTF_Font* font);
@@ -211,12 +205,10 @@ namespace SDL
         public static extern TTF_HintingFlags TTF_GetFontHinting([NativeTypeName("const TTF_Font *")] TTF_Font* font);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_SetFontSDF(TTF_Font* font, [NativeTypeName("bool")] SDLBool enabled);
+        public static extern bool TTF_SetFontSDF(TTF_Font* font, bool enabled);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_GetFontSDF([NativeTypeName("const TTF_Font *")] TTF_Font* font);
+        public static extern bool TTF_GetFontSDF([NativeTypeName("const TTF_Font *")] TTF_Font* font);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int TTF_GetFontWeight([NativeTypeName("const TTF_Font *")] TTF_Font* font);
@@ -243,19 +235,16 @@ namespace SDL
         public static extern int TTF_GetFontLineSkip([NativeTypeName("const TTF_Font *")] TTF_Font* font);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void TTF_SetFontKerning(TTF_Font* font, [NativeTypeName("bool")] SDLBool enabled);
+        public static extern void TTF_SetFontKerning(TTF_Font* font, bool enabled);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_GetFontKerning([NativeTypeName("const TTF_Font *")] TTF_Font* font);
+        public static extern bool TTF_GetFontKerning([NativeTypeName("const TTF_Font *")] TTF_Font* font);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_FontIsFixedWidth([NativeTypeName("const TTF_Font *")] TTF_Font* font);
+        public static extern bool TTF_FontIsFixedWidth([NativeTypeName("const TTF_Font *")] TTF_Font* font);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_FontIsScalable([NativeTypeName("const TTF_Font *")] TTF_Font* font);
+        public static extern bool TTF_FontIsScalable([NativeTypeName("const TTF_Font *")] TTF_Font* font);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, EntryPoint = "TTF_GetFontFamilyName", ExactSpelling = true)]
         [return: NativeTypeName("const char *")]
@@ -266,15 +255,13 @@ namespace SDL
         public static extern byte* Unsafe_TTF_GetFontStyleName([NativeTypeName("const TTF_Font *")] TTF_Font* font);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_SetFontDirection(TTF_Font* font, TTF_Direction direction);
+        public static extern bool TTF_SetFontDirection(TTF_Font* font, TTF_Direction direction);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern TTF_Direction TTF_GetFontDirection(TTF_Font* font);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_SetFontCharSpacing(TTF_Font* font, int spacing);
+        public static extern bool TTF_SetFontCharSpacing(TTF_Font* font, int spacing);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int TTF_GetFontCharSpacing(TTF_Font* font);
@@ -287,8 +274,7 @@ namespace SDL
         public static extern void TTF_TagToString([NativeTypeName("Uint32")] uint tag, [NativeTypeName("char *")] byte* @string, [NativeTypeName("size_t")] nuint size);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_SetFontScript(TTF_Font* font, [NativeTypeName("Uint32")] uint script);
+        public static extern bool TTF_SetFontScript(TTF_Font* font, [NativeTypeName("Uint32")] uint script);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("Uint32")]
@@ -299,12 +285,10 @@ namespace SDL
         public static extern uint TTF_GetGlyphScript([NativeTypeName("Uint32")] uint ch);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_SetFontLanguage(TTF_Font* font, [NativeTypeName("const char *")] byte* language_bcp47);
+        public static extern bool TTF_SetFontLanguage(TTF_Font* font, [NativeTypeName("const char *")] byte* language_bcp47);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_FontHasGlyph(TTF_Font* font, [NativeTypeName("Uint32")] uint ch);
+        public static extern bool TTF_FontHasGlyph(TTF_Font* font, [NativeTypeName("Uint32")] uint ch);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern SDL_Surface* TTF_GetGlyphImage(TTF_Font* font, [NativeTypeName("Uint32")] uint ch, TTF_ImageType* image_type);
@@ -313,24 +297,19 @@ namespace SDL
         public static extern SDL_Surface* TTF_GetGlyphImageForIndex(TTF_Font* font, [NativeTypeName("Uint32")] uint glyph_index, TTF_ImageType* image_type);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_GetGlyphMetrics(TTF_Font* font, [NativeTypeName("Uint32")] uint ch, int* minx, int* maxx, int* miny, int* maxy, int* advance);
+        public static extern bool TTF_GetGlyphMetrics(TTF_Font* font, [NativeTypeName("Uint32")] uint ch, int* minx, int* maxx, int* miny, int* maxy, int* advance);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_GetGlyphKerning(TTF_Font* font, [NativeTypeName("Uint32")] uint previous_ch, [NativeTypeName("Uint32")] uint ch, int* kerning);
+        public static extern bool TTF_GetGlyphKerning(TTF_Font* font, [NativeTypeName("Uint32")] uint previous_ch, [NativeTypeName("Uint32")] uint ch, int* kerning);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_GetStringSize(TTF_Font* font, [NativeTypeName("const char *")] byte* text, [NativeTypeName("size_t")] nuint length, int* w, int* h);
+        public static extern bool TTF_GetStringSize(TTF_Font* font, [NativeTypeName("const char *")] byte* text, [NativeTypeName("size_t")] nuint length, int* w, int* h);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_GetStringSizeWrapped(TTF_Font* font, [NativeTypeName("const char *")] byte* text, [NativeTypeName("size_t")] nuint length, int wrap_width, int* w, int* h);
+        public static extern bool TTF_GetStringSizeWrapped(TTF_Font* font, [NativeTypeName("const char *")] byte* text, [NativeTypeName("size_t")] nuint length, int wrap_width, int* w, int* h);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_MeasureString(TTF_Font* font, [NativeTypeName("const char *")] byte* text, [NativeTypeName("size_t")] nuint length, int max_width, int* measured_width, [NativeTypeName("size_t *")] nuint* measured_length);
+        public static extern bool TTF_MeasureString(TTF_Font* font, [NativeTypeName("const char *")] byte* text, [NativeTypeName("size_t")] nuint length, int max_width, int* measured_width, [NativeTypeName("size_t *")] nuint* measured_length);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern SDL_Surface* TTF_RenderText_Solid(TTF_Font* font, [NativeTypeName("const char *")] byte* text, [NativeTypeName("size_t")] nuint length, SDL_Color fg);
@@ -372,8 +351,7 @@ namespace SDL
         public static extern TTF_TextEngine* TTF_CreateSurfaceTextEngine();
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_DrawSurfaceText(TTF_Text* text, int x, int y, SDL_Surface* surface);
+        public static extern bool TTF_DrawSurfaceText(TTF_Text* text, int x, int y, SDL_Surface* surface);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void TTF_DestroySurfaceTextEngine(TTF_TextEngine* engine);
@@ -385,8 +363,7 @@ namespace SDL
         public static extern TTF_TextEngine* TTF_CreateRendererTextEngineWithProperties(SDL_PropertiesID props);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_DrawRendererText(TTF_Text* text, float x, float y);
+        public static extern bool TTF_DrawRendererText(TTF_Text* text, float x, float y);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void TTF_DestroyRendererTextEngine(TTF_TextEngine* engine);
@@ -416,120 +393,95 @@ namespace SDL
         public static extern SDL_PropertiesID TTF_GetTextProperties(TTF_Text* text);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_SetTextEngine(TTF_Text* text, TTF_TextEngine* engine);
+        public static extern bool TTF_SetTextEngine(TTF_Text* text, TTF_TextEngine* engine);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern TTF_TextEngine* TTF_GetTextEngine(TTF_Text* text);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_SetTextFont(TTF_Text* text, TTF_Font* font);
+        public static extern bool TTF_SetTextFont(TTF_Text* text, TTF_Font* font);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern TTF_Font* TTF_GetTextFont(TTF_Text* text);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_SetTextDirection(TTF_Text* text, TTF_Direction direction);
+        public static extern bool TTF_SetTextDirection(TTF_Text* text, TTF_Direction direction);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern TTF_Direction TTF_GetTextDirection(TTF_Text* text);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_SetTextScript(TTF_Text* text, [NativeTypeName("Uint32")] uint script);
+        public static extern bool TTF_SetTextScript(TTF_Text* text, [NativeTypeName("Uint32")] uint script);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("Uint32")]
         public static extern uint TTF_GetTextScript(TTF_Text* text);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_SetTextColor(TTF_Text* text, [NativeTypeName("Uint8")] byte r, [NativeTypeName("Uint8")] byte g, [NativeTypeName("Uint8")] byte b, [NativeTypeName("Uint8")] byte a);
+        public static extern bool TTF_SetTextColor(TTF_Text* text, [NativeTypeName("Uint8")] byte r, [NativeTypeName("Uint8")] byte g, [NativeTypeName("Uint8")] byte b, [NativeTypeName("Uint8")] byte a);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_SetTextColorFloat(TTF_Text* text, float r, float g, float b, float a);
+        public static extern bool TTF_SetTextColorFloat(TTF_Text* text, float r, float g, float b, float a);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_GetTextColor(TTF_Text* text, [NativeTypeName("Uint8 *")] byte* r, [NativeTypeName("Uint8 *")] byte* g, [NativeTypeName("Uint8 *")] byte* b, [NativeTypeName("Uint8 *")] byte* a);
+        public static extern bool TTF_GetTextColor(TTF_Text* text, [NativeTypeName("Uint8 *")] byte* r, [NativeTypeName("Uint8 *")] byte* g, [NativeTypeName("Uint8 *")] byte* b, [NativeTypeName("Uint8 *")] byte* a);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_GetTextColorFloat(TTF_Text* text, float* r, float* g, float* b, float* a);
+        public static extern bool TTF_GetTextColorFloat(TTF_Text* text, float* r, float* g, float* b, float* a);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_SetTextPosition(TTF_Text* text, int x, int y);
+        public static extern bool TTF_SetTextPosition(TTF_Text* text, int x, int y);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_GetTextPosition(TTF_Text* text, int* x, int* y);
+        public static extern bool TTF_GetTextPosition(TTF_Text* text, int* x, int* y);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_SetTextWrapWidth(TTF_Text* text, int wrap_width);
+        public static extern bool TTF_SetTextWrapWidth(TTF_Text* text, int wrap_width);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_GetTextWrapWidth(TTF_Text* text, int* wrap_width);
+        public static extern bool TTF_GetTextWrapWidth(TTF_Text* text, int* wrap_width);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_SetTextWrapWhitespaceVisible(TTF_Text* text, [NativeTypeName("bool")] SDLBool visible);
+        public static extern bool TTF_SetTextWrapWhitespaceVisible(TTF_Text* text, bool visible);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_TextWrapWhitespaceVisible(TTF_Text* text);
+        public static extern bool TTF_TextWrapWhitespaceVisible(TTF_Text* text);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_SetTextString(TTF_Text* text, [NativeTypeName("const char *")] byte* @string, [NativeTypeName("size_t")] nuint length);
+        public static extern bool TTF_SetTextString(TTF_Text* text, [NativeTypeName("const char *")] byte* @string, [NativeTypeName("size_t")] nuint length);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_InsertTextString(TTF_Text* text, int offset, [NativeTypeName("const char *")] byte* @string, [NativeTypeName("size_t")] nuint length);
+        public static extern bool TTF_InsertTextString(TTF_Text* text, int offset, [NativeTypeName("const char *")] byte* @string, [NativeTypeName("size_t")] nuint length);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_AppendTextString(TTF_Text* text, [NativeTypeName("const char *")] byte* @string, [NativeTypeName("size_t")] nuint length);
+        public static extern bool TTF_AppendTextString(TTF_Text* text, [NativeTypeName("const char *")] byte* @string, [NativeTypeName("size_t")] nuint length);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_DeleteTextString(TTF_Text* text, int offset, int length);
+        public static extern bool TTF_DeleteTextString(TTF_Text* text, int offset, int length);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_GetTextSize(TTF_Text* text, int* w, int* h);
+        public static extern bool TTF_GetTextSize(TTF_Text* text, int* w, int* h);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_GetTextSubString(TTF_Text* text, int offset, TTF_SubString* substring);
+        public static extern bool TTF_GetTextSubString(TTF_Text* text, int offset, TTF_SubString* substring);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_GetTextSubStringForLine(TTF_Text* text, int line, TTF_SubString* substring);
+        public static extern bool TTF_GetTextSubStringForLine(TTF_Text* text, int line, TTF_SubString* substring);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern TTF_SubString** TTF_GetTextSubStringsForRange(TTF_Text* text, int offset, int length, int* count);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_GetTextSubStringForPoint(TTF_Text* text, int x, int y, TTF_SubString* substring);
+        public static extern bool TTF_GetTextSubStringForPoint(TTF_Text* text, int x, int y, TTF_SubString* substring);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_GetPreviousTextSubString(TTF_Text* text, [NativeTypeName("const TTF_SubString *")] TTF_SubString* substring, TTF_SubString* previous);
+        public static extern bool TTF_GetPreviousTextSubString(TTF_Text* text, [NativeTypeName("const TTF_SubString *")] TTF_SubString* substring, TTF_SubString* previous);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_GetNextTextSubString(TTF_Text* text, [NativeTypeName("const TTF_SubString *")] TTF_SubString* substring, TTF_SubString* next);
+        public static extern bool TTF_GetNextTextSubString(TTF_Text* text, [NativeTypeName("const TTF_SubString *")] TTF_SubString* substring, TTF_SubString* next);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool TTF_UpdateText(TTF_Text* text);
+        public static extern bool TTF_UpdateText(TTF_Text* text);
 
         [DllImport("SDL3_ttf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void TTF_DestroyText(TTF_Text* text);

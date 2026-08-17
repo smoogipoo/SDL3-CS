@@ -84,18 +84,16 @@ namespace SDL
         public static extern byte* Unsafe_SDL_GetTrayEntryLabel(SDL_TrayEntry* entry);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void SDL_SetTrayEntryChecked(SDL_TrayEntry* entry, [NativeTypeName("bool")] SDLBool @checked);
+        public static extern void SDL_SetTrayEntryChecked(SDL_TrayEntry* entry, bool @checked);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_GetTrayEntryChecked(SDL_TrayEntry* entry);
+        public static extern bool SDL_GetTrayEntryChecked(SDL_TrayEntry* entry);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void SDL_SetTrayEntryEnabled(SDL_TrayEntry* entry, [NativeTypeName("bool")] SDLBool enabled);
+        public static extern void SDL_SetTrayEntryEnabled(SDL_TrayEntry* entry, bool enabled);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_GetTrayEntryEnabled(SDL_TrayEntry* entry);
+        public static extern bool SDL_GetTrayEntryEnabled(SDL_TrayEntry* entry);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void SDL_SetTrayEntryCallback(SDL_TrayEntry* entry, [NativeTypeName("SDL_TrayCallback")] delegate* unmanaged[Cdecl]<IntPtr, SDL_TrayEntry*, void> callback, [NativeTypeName("void*")] IntPtr userdata);

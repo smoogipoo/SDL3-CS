@@ -264,6 +264,7 @@ base_command = [
     "latest-codegen",
     "windows-types",
     "generate-macro-bindings",
+    "generate-disable-runtime-marshalling",
 
     "--file-directory", repository_root,
     "--include-directory", repository_root / SDL_lib_include_root["SDL3"],
@@ -276,7 +277,6 @@ base_command = [
     "void*=IntPtr",
     "char=byte",
     "wchar_t *=IntPtr",  # wchar_t has a platform-defined size
-    "bool=SDLBool",  # treat bool as C# helper type
     "__va_list=byte*",
     "__va_list_tag=byte",
     "Sint64=long",

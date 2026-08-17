@@ -84,8 +84,7 @@ namespace SDL
 
         public SDL_FColor color;
 
-        [NativeTypeName("bool")]
-        public SDLBool needs_layout_update;
+        public bool needs_layout_update;
 
         public TTF_TextLayout* layout;
 
@@ -107,8 +106,7 @@ namespace SDL
 
         public SDL_PropertiesID props;
 
-        [NativeTypeName("bool")]
-        public SDLBool needs_engine_update;
+        public bool needs_engine_update;
 
         public TTF_TextEngine* engine;
 
@@ -125,7 +123,7 @@ namespace SDL
         public IntPtr userdata;
 
         [NativeTypeName("bool (*)(void *, TTF_Text *)")]
-        public delegate* unmanaged[Cdecl]<IntPtr, TTF_Text*, SDLBool> CreateText;
+        public delegate* unmanaged[Cdecl]<IntPtr, TTF_Text*, bool> CreateText;
 
         [NativeTypeName("void (*)(void *, TTF_Text *)")]
         public delegate* unmanaged[Cdecl]<IntPtr, TTF_Text*, void> DestroyText;

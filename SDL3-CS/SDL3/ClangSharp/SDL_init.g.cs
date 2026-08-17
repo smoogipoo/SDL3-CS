@@ -38,12 +38,10 @@ namespace SDL
     public static unsafe partial class SDL3
     {
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_Init(SDL_InitFlags flags);
+        public static extern bool SDL_Init(SDL_InitFlags flags);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_InitSubSystem(SDL_InitFlags flags);
+        public static extern bool SDL_InitSubSystem(SDL_InitFlags flags);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void SDL_QuitSubSystem(SDL_InitFlags flags);
@@ -55,20 +53,16 @@ namespace SDL
         public static extern void SDL_Quit();
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_IsMainThread();
+        public static extern bool SDL_IsMainThread();
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_RunOnMainThread([NativeTypeName("SDL_MainThreadCallback")] delegate* unmanaged[Cdecl]<IntPtr, void> callback, [NativeTypeName("void*")] IntPtr userdata, [NativeTypeName("bool")] SDLBool wait_complete);
+        public static extern bool SDL_RunOnMainThread([NativeTypeName("SDL_MainThreadCallback")] delegate* unmanaged[Cdecl]<IntPtr, void> callback, [NativeTypeName("void*")] IntPtr userdata, bool wait_complete);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_SetAppMetadata([NativeTypeName("const char *")] byte* appname, [NativeTypeName("const char *")] byte* appversion, [NativeTypeName("const char *")] byte* appidentifier);
+        public static extern bool SDL_SetAppMetadata([NativeTypeName("const char *")] byte* appname, [NativeTypeName("const char *")] byte* appversion, [NativeTypeName("const char *")] byte* appidentifier);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_SetAppMetadataProperty([NativeTypeName("const char *")] byte* name, [NativeTypeName("const char *")] byte* value);
+        public static extern bool SDL_SetAppMetadataProperty([NativeTypeName("const char *")] byte* name, [NativeTypeName("const char *")] byte* value);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, EntryPoint = "SDL_GetAppMetadataProperty", ExactSpelling = true)]
         [return: NativeTypeName("const char *")]

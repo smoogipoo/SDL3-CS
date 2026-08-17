@@ -66,107 +66,88 @@ namespace SDL
         public static extern SDL_Surface* IMG_Load([NativeTypeName("const char *")] byte* file);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern SDL_Surface* IMG_Load_IO(SDL_IOStream* src, [NativeTypeName("bool")] SDLBool closeio);
+        public static extern SDL_Surface* IMG_Load_IO(SDL_IOStream* src, bool closeio);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern SDL_Surface* IMG_LoadTyped_IO(SDL_IOStream* src, [NativeTypeName("bool")] SDLBool closeio, [NativeTypeName("const char *")] byte* type);
+        public static extern SDL_Surface* IMG_LoadTyped_IO(SDL_IOStream* src, bool closeio, [NativeTypeName("const char *")] byte* type);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern SDL_Texture* IMG_LoadTexture(SDL_Renderer* renderer, [NativeTypeName("const char *")] byte* file);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern SDL_Texture* IMG_LoadTexture_IO(SDL_Renderer* renderer, SDL_IOStream* src, [NativeTypeName("bool")] SDLBool closeio);
+        public static extern SDL_Texture* IMG_LoadTexture_IO(SDL_Renderer* renderer, SDL_IOStream* src, bool closeio);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern SDL_Texture* IMG_LoadTextureTyped_IO(SDL_Renderer* renderer, SDL_IOStream* src, [NativeTypeName("bool")] SDLBool closeio, [NativeTypeName("const char *")] byte* type);
+        public static extern SDL_Texture* IMG_LoadTextureTyped_IO(SDL_Renderer* renderer, SDL_IOStream* src, bool closeio, [NativeTypeName("const char *")] byte* type);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern SDL_GPUTexture* IMG_LoadGPUTexture(SDL_GPUDevice* device, SDL_GPUCopyPass* copy_pass, [NativeTypeName("const char *")] byte* file, int* width, int* height);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern SDL_GPUTexture* IMG_LoadGPUTexture_IO(SDL_GPUDevice* device, SDL_GPUCopyPass* copy_pass, SDL_IOStream* src, [NativeTypeName("bool")] SDLBool closeio, int* width, int* height);
+        public static extern SDL_GPUTexture* IMG_LoadGPUTexture_IO(SDL_GPUDevice* device, SDL_GPUCopyPass* copy_pass, SDL_IOStream* src, bool closeio, int* width, int* height);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern SDL_GPUTexture* IMG_LoadGPUTextureTyped_IO(SDL_GPUDevice* device, SDL_GPUCopyPass* copy_pass, SDL_IOStream* src, [NativeTypeName("bool")] SDLBool closeio, [NativeTypeName("const char *")] byte* type, int* width, int* height);
+        public static extern SDL_GPUTexture* IMG_LoadGPUTextureTyped_IO(SDL_GPUDevice* device, SDL_GPUCopyPass* copy_pass, SDL_IOStream* src, bool closeio, [NativeTypeName("const char *")] byte* type, int* width, int* height);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern SDL_Surface* IMG_GetClipboardImage();
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isANI(SDL_IOStream* src);
+        public static extern bool IMG_isANI(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isAVIF(SDL_IOStream* src);
+        public static extern bool IMG_isAVIF(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isCUR(SDL_IOStream* src);
+        public static extern bool IMG_isCUR(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isBMP(SDL_IOStream* src);
+        public static extern bool IMG_isBMP(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isGIF(SDL_IOStream* src);
+        public static extern bool IMG_isGIF(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isICO(SDL_IOStream* src);
+        public static extern bool IMG_isICO(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isJPG(SDL_IOStream* src);
+        public static extern bool IMG_isJPG(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isJXL(SDL_IOStream* src);
+        public static extern bool IMG_isJXL(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isLBM(SDL_IOStream* src);
+        public static extern bool IMG_isLBM(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isPCX(SDL_IOStream* src);
+        public static extern bool IMG_isPCX(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isPNG(SDL_IOStream* src);
+        public static extern bool IMG_isPNG(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isPNM(SDL_IOStream* src);
+        public static extern bool IMG_isPNM(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isQOI(SDL_IOStream* src);
+        public static extern bool IMG_isQOI(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isSVG(SDL_IOStream* src);
+        public static extern bool IMG_isSVG(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isTIF(SDL_IOStream* src);
+        public static extern bool IMG_isTIF(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isWEBP(SDL_IOStream* src);
+        public static extern bool IMG_isWEBP(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isXCF(SDL_IOStream* src);
+        public static extern bool IMG_isXCF(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isXPM(SDL_IOStream* src);
+        public static extern bool IMG_isXPM(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_isXV(SDL_IOStream* src);
+        public static extern bool IMG_isXV(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern SDL_Surface* IMG_LoadAVIF_IO(SDL_IOStream* src);
@@ -235,93 +216,73 @@ namespace SDL
         public static extern SDL_Surface* IMG_ReadXPMFromArrayToRGB888([NativeTypeName("char **")] byte** xpm);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_Save(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file);
+        public static extern bool IMG_Save(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveTyped_IO(SDL_Surface* surface, SDL_IOStream* dst, [NativeTypeName("bool")] SDLBool closeio, [NativeTypeName("const char *")] byte* type);
+        public static extern bool IMG_SaveTyped_IO(SDL_Surface* surface, SDL_IOStream* dst, bool closeio, [NativeTypeName("const char *")] byte* type);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveAVIF(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file, int quality);
+        public static extern bool IMG_SaveAVIF(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file, int quality);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveAVIF_IO(SDL_Surface* surface, SDL_IOStream* dst, [NativeTypeName("bool")] SDLBool closeio, int quality);
+        public static extern bool IMG_SaveAVIF_IO(SDL_Surface* surface, SDL_IOStream* dst, bool closeio, int quality);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveBMP(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file);
+        public static extern bool IMG_SaveBMP(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveBMP_IO(SDL_Surface* surface, SDL_IOStream* dst, [NativeTypeName("bool")] SDLBool closeio);
+        public static extern bool IMG_SaveBMP_IO(SDL_Surface* surface, SDL_IOStream* dst, bool closeio);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveCUR(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file);
+        public static extern bool IMG_SaveCUR(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveCUR_IO(SDL_Surface* surface, SDL_IOStream* dst, [NativeTypeName("bool")] SDLBool closeio);
+        public static extern bool IMG_SaveCUR_IO(SDL_Surface* surface, SDL_IOStream* dst, bool closeio);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveGIF(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file);
+        public static extern bool IMG_SaveGIF(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveGIF_IO(SDL_Surface* surface, SDL_IOStream* dst, [NativeTypeName("bool")] SDLBool closeio);
+        public static extern bool IMG_SaveGIF_IO(SDL_Surface* surface, SDL_IOStream* dst, bool closeio);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveICO(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file);
+        public static extern bool IMG_SaveICO(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveICO_IO(SDL_Surface* surface, SDL_IOStream* dst, [NativeTypeName("bool")] SDLBool closeio);
+        public static extern bool IMG_SaveICO_IO(SDL_Surface* surface, SDL_IOStream* dst, bool closeio);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveJPG(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file, int quality);
+        public static extern bool IMG_SaveJPG(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file, int quality);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveJPG_IO(SDL_Surface* surface, SDL_IOStream* dst, [NativeTypeName("bool")] SDLBool closeio, int quality);
+        public static extern bool IMG_SaveJPG_IO(SDL_Surface* surface, SDL_IOStream* dst, bool closeio, int quality);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SavePNG(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file);
+        public static extern bool IMG_SavePNG(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SavePNG_IO(SDL_Surface* surface, SDL_IOStream* dst, [NativeTypeName("bool")] SDLBool closeio);
+        public static extern bool IMG_SavePNG_IO(SDL_Surface* surface, SDL_IOStream* dst, bool closeio);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveTGA(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file);
+        public static extern bool IMG_SaveTGA(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveTGA_IO(SDL_Surface* surface, SDL_IOStream* dst, [NativeTypeName("bool")] SDLBool closeio);
+        public static extern bool IMG_SaveTGA_IO(SDL_Surface* surface, SDL_IOStream* dst, bool closeio);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveWEBP(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file, float quality);
+        public static extern bool IMG_SaveWEBP(SDL_Surface* surface, [NativeTypeName("const char *")] byte* file, float quality);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveWEBP_IO(SDL_Surface* surface, SDL_IOStream* dst, [NativeTypeName("bool")] SDLBool closeio, float quality);
+        public static extern bool IMG_SaveWEBP_IO(SDL_Surface* surface, SDL_IOStream* dst, bool closeio, float quality);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern IMG_Animation* IMG_LoadAnimation([NativeTypeName("const char *")] byte* file);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern IMG_Animation* IMG_LoadAnimation_IO(SDL_IOStream* src, [NativeTypeName("bool")] SDLBool closeio);
+        public static extern IMG_Animation* IMG_LoadAnimation_IO(SDL_IOStream* src, bool closeio);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern IMG_Animation* IMG_LoadAnimationTyped_IO(SDL_IOStream* src, [NativeTypeName("bool")] SDLBool closeio, [NativeTypeName("const char *")] byte* type);
+        public static extern IMG_Animation* IMG_LoadAnimationTyped_IO(SDL_IOStream* src, bool closeio, [NativeTypeName("const char *")] byte* type);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern IMG_Animation* IMG_LoadANIAnimation_IO(SDL_IOStream* src);
@@ -339,32 +300,25 @@ namespace SDL
         public static extern IMG_Animation* IMG_LoadWEBPAnimation_IO(SDL_IOStream* src);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveAnimation(IMG_Animation* anim, [NativeTypeName("const char *")] byte* file);
+        public static extern bool IMG_SaveAnimation(IMG_Animation* anim, [NativeTypeName("const char *")] byte* file);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveAnimationTyped_IO(IMG_Animation* anim, SDL_IOStream* dst, [NativeTypeName("bool")] SDLBool closeio, [NativeTypeName("const char *")] byte* type);
+        public static extern bool IMG_SaveAnimationTyped_IO(IMG_Animation* anim, SDL_IOStream* dst, bool closeio, [NativeTypeName("const char *")] byte* type);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveANIAnimation_IO(IMG_Animation* anim, SDL_IOStream* dst, [NativeTypeName("bool")] SDLBool closeio);
+        public static extern bool IMG_SaveANIAnimation_IO(IMG_Animation* anim, SDL_IOStream* dst, bool closeio);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveAPNGAnimation_IO(IMG_Animation* anim, SDL_IOStream* dst, [NativeTypeName("bool")] SDLBool closeio);
+        public static extern bool IMG_SaveAPNGAnimation_IO(IMG_Animation* anim, SDL_IOStream* dst, bool closeio);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveAVIFAnimation_IO(IMG_Animation* anim, SDL_IOStream* dst, [NativeTypeName("bool")] SDLBool closeio, int quality);
+        public static extern bool IMG_SaveAVIFAnimation_IO(IMG_Animation* anim, SDL_IOStream* dst, bool closeio, int quality);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveGIFAnimation_IO(IMG_Animation* anim, SDL_IOStream* dst, [NativeTypeName("bool")] SDLBool closeio);
+        public static extern bool IMG_SaveGIFAnimation_IO(IMG_Animation* anim, SDL_IOStream* dst, bool closeio);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_SaveWEBPAnimation_IO(IMG_Animation* anim, SDL_IOStream* dst, [NativeTypeName("bool")] SDLBool closeio, int quality);
+        public static extern bool IMG_SaveWEBPAnimation_IO(IMG_Animation* anim, SDL_IOStream* dst, bool closeio, int quality);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern SDL_Cursor* IMG_CreateAnimatedCursor(IMG_Animation* anim, int hot_x, int hot_y);
@@ -376,24 +330,22 @@ namespace SDL
         public static extern IMG_AnimationEncoder* IMG_CreateAnimationEncoder([NativeTypeName("const char *")] byte* file);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern IMG_AnimationEncoder* IMG_CreateAnimationEncoder_IO(SDL_IOStream* dst, [NativeTypeName("bool")] SDLBool closeio, [NativeTypeName("const char *")] byte* type);
+        public static extern IMG_AnimationEncoder* IMG_CreateAnimationEncoder_IO(SDL_IOStream* dst, bool closeio, [NativeTypeName("const char *")] byte* type);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern IMG_AnimationEncoder* IMG_CreateAnimationEncoderWithProperties(SDL_PropertiesID props);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_AddAnimationEncoderFrame(IMG_AnimationEncoder* encoder, SDL_Surface* surface, [NativeTypeName("Uint64")] ulong duration);
+        public static extern bool IMG_AddAnimationEncoderFrame(IMG_AnimationEncoder* encoder, SDL_Surface* surface, [NativeTypeName("Uint64")] ulong duration);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_CloseAnimationEncoder(IMG_AnimationEncoder* encoder);
+        public static extern bool IMG_CloseAnimationEncoder(IMG_AnimationEncoder* encoder);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern IMG_AnimationDecoder* IMG_CreateAnimationDecoder([NativeTypeName("const char *")] byte* file);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern IMG_AnimationDecoder* IMG_CreateAnimationDecoder_IO(SDL_IOStream* src, [NativeTypeName("bool")] SDLBool closeio, [NativeTypeName("const char *")] byte* type);
+        public static extern IMG_AnimationDecoder* IMG_CreateAnimationDecoder_IO(SDL_IOStream* src, bool closeio, [NativeTypeName("const char *")] byte* type);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern IMG_AnimationDecoder* IMG_CreateAnimationDecoderWithProperties(SDL_PropertiesID props);
@@ -402,19 +354,16 @@ namespace SDL
         public static extern SDL_PropertiesID IMG_GetAnimationDecoderProperties(IMG_AnimationDecoder* decoder);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_GetAnimationDecoderFrame(IMG_AnimationDecoder* decoder, SDL_Surface** frame, [NativeTypeName("Uint64 *")] ulong* duration);
+        public static extern bool IMG_GetAnimationDecoderFrame(IMG_AnimationDecoder* decoder, SDL_Surface** frame, [NativeTypeName("Uint64 *")] ulong* duration);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern IMG_AnimationDecoderStatus IMG_GetAnimationDecoderStatus(IMG_AnimationDecoder* decoder);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_ResetAnimationDecoder(IMG_AnimationDecoder* decoder);
+        public static extern bool IMG_ResetAnimationDecoder(IMG_AnimationDecoder* decoder);
 
         [DllImport("SDL3_image", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool IMG_CloseAnimationDecoder(IMG_AnimationDecoder* decoder);
+        public static extern bool IMG_CloseAnimationDecoder(IMG_AnimationDecoder* decoder);
 
         [NativeTypeName("#define SDL_IMAGE_MAJOR_VERSION 3")]
         public const int SDL_IMAGE_MAJOR_VERSION = 3;

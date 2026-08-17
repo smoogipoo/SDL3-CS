@@ -84,16 +84,13 @@ namespace SDL
         public static extern long SDL_GetAsyncIOSize(SDL_AsyncIO* asyncio);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_ReadAsyncIO(SDL_AsyncIO* asyncio, [NativeTypeName("void*")] IntPtr ptr, [NativeTypeName("Uint64")] ulong offset, [NativeTypeName("Uint64")] ulong size, SDL_AsyncIOQueue* queue, [NativeTypeName("void*")] IntPtr userdata);
+        public static extern bool SDL_ReadAsyncIO(SDL_AsyncIO* asyncio, [NativeTypeName("void*")] IntPtr ptr, [NativeTypeName("Uint64")] ulong offset, [NativeTypeName("Uint64")] ulong size, SDL_AsyncIOQueue* queue, [NativeTypeName("void*")] IntPtr userdata);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_WriteAsyncIO(SDL_AsyncIO* asyncio, [NativeTypeName("void*")] IntPtr ptr, [NativeTypeName("Uint64")] ulong offset, [NativeTypeName("Uint64")] ulong size, SDL_AsyncIOQueue* queue, [NativeTypeName("void*")] IntPtr userdata);
+        public static extern bool SDL_WriteAsyncIO(SDL_AsyncIO* asyncio, [NativeTypeName("void*")] IntPtr ptr, [NativeTypeName("Uint64")] ulong offset, [NativeTypeName("Uint64")] ulong size, SDL_AsyncIOQueue* queue, [NativeTypeName("void*")] IntPtr userdata);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_CloseAsyncIO(SDL_AsyncIO* asyncio, [NativeTypeName("bool")] SDLBool flush, SDL_AsyncIOQueue* queue, [NativeTypeName("void*")] IntPtr userdata);
+        public static extern bool SDL_CloseAsyncIO(SDL_AsyncIO* asyncio, bool flush, SDL_AsyncIOQueue* queue, [NativeTypeName("void*")] IntPtr userdata);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern SDL_AsyncIOQueue* SDL_CreateAsyncIOQueue();
@@ -102,18 +99,15 @@ namespace SDL
         public static extern void SDL_DestroyAsyncIOQueue(SDL_AsyncIOQueue* queue);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_GetAsyncIOResult(SDL_AsyncIOQueue* queue, SDL_AsyncIOOutcome* outcome);
+        public static extern bool SDL_GetAsyncIOResult(SDL_AsyncIOQueue* queue, SDL_AsyncIOOutcome* outcome);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_WaitAsyncIOResult(SDL_AsyncIOQueue* queue, SDL_AsyncIOOutcome* outcome, [NativeTypeName("Sint32")] int timeoutMS);
+        public static extern bool SDL_WaitAsyncIOResult(SDL_AsyncIOQueue* queue, SDL_AsyncIOOutcome* outcome, [NativeTypeName("Sint32")] int timeoutMS);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void SDL_SignalAsyncIOQueue(SDL_AsyncIOQueue* queue);
 
         [DllImport("SDL3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("bool")]
-        public static extern SDLBool SDL_LoadFileAsync([NativeTypeName("const char *")] byte* file, SDL_AsyncIOQueue* queue, [NativeTypeName("void*")] IntPtr userdata);
+        public static extern bool SDL_LoadFileAsync([NativeTypeName("const char *")] byte* file, SDL_AsyncIOQueue* queue, [NativeTypeName("void*")] IntPtr userdata);
     }
 }

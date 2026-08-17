@@ -17,8 +17,8 @@ namespace SDL.Tests
             if (OperatingSystem.IsWindows())
                 Console.OutputEncoding = Encoding.UTF8;
 
-            Console.WriteLine($"false is represented as {SDL_OutOfMemory()} (expected 0x{SDLBool.FALSE_VALUE:x2})");
-            Console.WriteLine($"true  is represented as {SDL_ClearError()} (expected 0x{SDLBool.TRUE_VALUE:x2})");
+            Console.WriteLine($"false is represented as {SDL_OutOfMemory()}");
+            Console.WriteLine($"true  is represented as {SDL_ClearError()}");
 
             SDL_SetHint(SDL_HINT_WINDOWS_CLOSE_ON_ALT_F4, "null byte \0 in string"u8);
             Debug.Assert(SDL_GetHint(SDL_HINT_WINDOWS_CLOSE_ON_ALT_F4) == "null byte ");

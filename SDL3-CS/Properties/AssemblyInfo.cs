@@ -9,3 +9,5 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo("SDL3_ttf-CS")]
 [assembly: InternalsVisibleTo("SDL3_image-CS")]
 [assembly: InternalsVisibleTo("SDL3_mixer-CS")]
+
+[assembly: DisableRuntimeMarshalling]
